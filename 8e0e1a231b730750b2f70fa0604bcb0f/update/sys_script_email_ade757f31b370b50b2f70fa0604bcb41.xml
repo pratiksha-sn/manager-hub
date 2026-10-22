@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_email">
+    <sys_script_email action="INSERT_OR_UPDATE">
+        <name>msr_portal_link</name>
+        <new_lines_to_html>false</new_lines_to_html>
+        <script><![CDATA[(function runMailScript(current, template, email, email_action, event) {
+    // Link to Employee Center (esc) instead of the platform UI
+    var base = gs.getProperty('glide.servlet.uri') + 'esc?id=';
+    var url;
+    var label;
+
+    if (current.getTableName() == 'sysapproval_approver') {
+        if (current.getValue('state') == 'requested') {
+            // Approver: open the approval in the portal
+            url = base + 'approval&table=sysapproval_approver&sys_id=' + current.getUniqueValue();
+            label = 'Open approval in Employee Center';
+        } else {
+            // Requester: open the approved / rejected request
+            url = base + 'ticket&table=' + current.getValue('source_table') + '&sys_id=' + current.getValue('sysapproval');
+            label = 'View request in Employee Center';
+        }
+    } else {
+        url = base + 'ticket&table=' + current.getTableName() + '&sys_id=' + current.getUniqueValue();
+        label = 'View ' + current.getValue('number') + ' in Employee Center';
+    }
+
+    template.print('<a href="' + url + '">' + label + '</a>');
+})(current, template, email, email_action, event);]]></script>
+        <sys_class_name>sys_script_email</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-15 06:28:14</sys_created_on>
+        <sys_id>ade757f31b370b50b2f70fa0604bcb41</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>msr_portal_link</sys_name>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>sys_script_email_ade757f31b370b50b2f70fa0604bcb41</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-15 06:28:14</sys_updated_on>
+    </sys_script_email>
+</record_update>

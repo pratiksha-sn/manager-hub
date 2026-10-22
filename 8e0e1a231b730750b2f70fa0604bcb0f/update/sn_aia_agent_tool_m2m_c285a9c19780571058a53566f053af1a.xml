@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_agent_tool_m2m">
+    <sn_aia_agent_tool_m2m action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <agent display_value="Manager Team Brief Assistant">5a81d10d9788171058a53566f053afea</agent>
+        <description>Opens the Request Manager Support form in the chat to submit a Manager Support Request (MSR) for one of the manager's direct reports. Use ONLY when the manager explicitly asks to raise, create or submit a support request; never for a team brief or other questions. Call it immediately with the values the manager gave – the form itself asks for missing fields and shows the single review before submitting.</description>
+        <display_mode>inline</display_mode>
+        <display_output>false</display_output>
+        <document_status/>
+        <entity>sn_aia_agent</entity>
+        <entity_id>5a81d10d9788171058a53566f053afea</entity_id>
+        <execution_mode>autopilot</execution_mode>
+        <inputs>[]</inputs>
+        <max_auto_executions>10</max_auto_executions>
+        <name>Submit manager support request</name>
+        <output_transformation_strategy>none</output_transformation_strategy>
+        <post_message/>
+        <post_processing_script/>
+        <pre_message/>
+        <pre_run>false</pre_run>
+        <requires_text_refined_message>false</requires_text_refined_message>
+        <requires_widget_transformation>true</requires_widget_transformation>
+        <should_display_refined_message>false</should_display_refined_message>
+        <sys_class_name>sn_aia_agent_tool_m2m</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-18 19:20:58</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>c285a9c19780571058a53566f053af1a</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Submit manager support request</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>sn_aia_agent_tool_m2m_c285a9c19780571058a53566f053af1a</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 02:48:20</sys_updated_on>
+        <timeout/>
+        <tool display_value="Request Manager Support">c28565819780571058a53566f053afb5</tool>
+        <tool_attributes>{}</tool_attributes>
+        <transformation_instructions/>
+        <wait_for_widget_interaction>false</wait_for_widget_interaction>
+        <widgets>db0e858eff62b210f465ffffffffff2c</widgets>
+    </sn_aia_agent_tool_m2m>
+</record_update>

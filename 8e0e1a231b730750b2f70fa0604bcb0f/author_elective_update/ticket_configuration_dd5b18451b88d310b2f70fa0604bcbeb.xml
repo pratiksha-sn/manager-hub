@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="ticket_configuration">
+    <ticket_configuration action="DELETE">
+        <action_widget/>
+        <action_widget_param/>
+        <active>true</active>
+        <advanced>false</advanced>
+        <description_field>description</description_field>
+        <info_fields>action_type,due_date,parent,assigned_to</info_fields>
+        <info_widget/>
+        <info_widget_param/>
+        <show_description/>
+        <state_field>state</state_field>
+        <summary_fields/>
+        <sys_class_name>ticket_configuration</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-18 13:56:47</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>dd5b18451b88d310b2f70fa0604bcbeb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snp_manager_su_0_follow_up_action</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>ticket_configuration_dd5b18451b88d310b2f70fa0604bcbeb</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-18 13:56:47</sys_updated_on>
+        <table>x_snp_manager_su_0_follow_up_action</table>
+    </ticket_configuration>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</application>
+        <file_path/>
+        <instance_id>c56f6cafebcb06d4cbbffceacad0cdc1</instance_id>
+        <instance_name>simplifynextpteltddemo2</instance_name>
+        <name>ticket_configuration_dd5b18451b88d310b2f70fa0604bcbeb</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="ticket_configuration"><ticket_configuration action="INSERT_OR_UPDATE"><action_widget/><action_widget_param/><active>true</active><advanced>false</advanced><description_field>description</description_field><info_fields>action_type,due_date,parent,assigned_to</info_fields><info_widget/><info_widget_param/><show_description/><state_field>state</state_field><summary_fields/><sys_class_name>ticket_configuration</sys_class_name><sys_created_by>pratiksha.bhandavale</sys_created_by><sys_created_on>2026-10-18 13:56:47</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>dd5b18451b88d310b2f70fa0604bcbeb</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_snp_manager_su_0_follow_up_action</sys_name><sys_overrides/><sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package><sys_policy/><sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope><sys_update_name>ticket_configuration_dd5b18451b88d310b2f70fa0604bcbeb</sys_update_name><sys_updated_by>pratiksha.bhandavale</sys_updated_by><sys_updated_on>2026-10-18 13:56:47</sys_updated_on><table>x_snp_manager_su_0_follow_up_action</table></ticket_configuration></record_update>]]></payload>
+        <payload_hash>-223490169</payload_hash>
+        <record_name>x_snp_manager_su_0_follow_up_action</record_name>
+        <reverted_from/>
+        <source>cdced6e31b730750b2f70fa0604bcb01</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-18 13:56:47</sys_created_on>
+        <sys_id>d15b1c451b88d310b2f70fa0604bcb56</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a14f4cfc6a0000001</sys_recorded_at>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-18 13:56:47</sys_updated_on>
+        <type>Ticket Configuration</type>
+        <update_guid>515b1c45ad88d31017e9c348ccea1555</update_guid>
+        <update_guid_history>515b1c45ad88d31017e9c348ccea1555:-223490169</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="x_snp_manager_su_0_follow_up_action">66ecdc891b88d310b2f70fa0604bcbb8</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-18 14:03:42</sys_created_on>
+        <sys_db_object display_value="" name="ticket_configuration">ticket_configuration</sys_db_object>
+        <sys_id>4cee701361294a64951e606ec8f93f61</sys_id>
+        <sys_metadata>dd5b18451b88d310b2f70fa0604bcbeb</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snp_manager_su_0_follow_up_action</sys_name>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_scope_delete display_value="">25f8c3211216469491c7eb05de329da9</sys_scope_delete>
+        <sys_update_name>ticket_configuration_dd5b18451b88d310b2f70fa0604bcbeb</sys_update_name>
+        <sys_update_version display_value="ticket_configuration_dd5b18451b88d310b2f70fa0604bcbeb">d15b1c451b88d310b2f70fa0604bcb56</sys_update_version>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-18 14:03:42</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

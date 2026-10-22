@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="ticket_tab_configuration">
+    <ticket_tab_configuration action="DELETE">
+        <advanced>false</advanced>
+        <order>20</order>
+        <parent display_value="x_snp_manager_su_0_follow_up_action">dd5b18451b88d310b2f70fa0604bcbeb</parent>
+        <script><![CDATA[/** * The script should evaluate true/false or `answer` populated with true/false which validates if a tab is visible  * The `current` object refers to the current Task(extension) record  **/ ]]></script>
+        <sys_class_name>ticket_tab_configuration</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-18 13:56:47</sys_created_on>
+        <sys_id>555b1c451b88d310b2f70fa0604bcb4f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>ticket_tab_configuration_555b1c451b88d310b2f70fa0604bcb4f</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-18 13:56:47</sys_updated_on>
+        <tab_name>Attachments</tab_name>
+        <table>x_snp_manager_su_0_follow_up_action</table>
+        <type>attachments</type>
+        <visible/>
+        <widget/>
+        <widget_param/>
+    </ticket_tab_configuration>
+    <sys_translated_text action="DELETE" query="documentkey=555b1c451b88d310b2f70fa0604bcb4f"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</application>
+        <file_path/>
+        <instance_id>c56f6cafebcb06d4cbbffceacad0cdc1</instance_id>
+        <instance_name>simplifynextpteltddemo2</instance_name>
+        <name>ticket_tab_configuration_555b1c451b88d310b2f70fa0604bcb4f</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="ticket_tab_configuration"&gt;&lt;ticket_tab_configuration action="INSERT_OR_UPDATE"&gt;&lt;advanced&gt;false&lt;/advanced&gt;&lt;order&gt;20&lt;/order&gt;&lt;parent display_value="x_snp_manager_su_0_follow_up_action"&gt;dd5b18451b88d310b2f70fa0604bcbeb&lt;/parent&gt;&lt;script&gt;&lt;![CDATA[/** * The script should evaluate true/false or `answer` populated with true/false which validates if a tab is visible  * The `current` object refers to the current Task(extension) record  **/ ]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;ticket_tab_configuration&lt;/sys_class_name&gt;&lt;sys_created_by&gt;pratiksha.bhandavale&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-18 13:56:47&lt;/sys_created_on&gt;&lt;sys_id&gt;555b1c451b88d310b2f70fa0604bcb4f&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0"&gt;8e0e1a231b730750b2f70fa0604bcb0f&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Manager Support Hub"&gt;8e0e1a231b730750b2f70fa0604bcb0f&lt;/sys_scope&gt;&lt;sys_update_name&gt;ticket_tab_configuration_555b1c451b88d310b2f70fa0604bcb4f&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;pratiksha.bhandavale&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-18 13:56:47&lt;/sys_updated_on&gt;&lt;tab_name&gt;Attachments&lt;/tab_name&gt;&lt;table&gt;x_snp_manager_su_0_follow_up_action&lt;/table&gt;&lt;type&gt;attachments&lt;/type&gt;&lt;visible/&gt;&lt;widget/&gt;&lt;widget_param/&gt;&lt;/ticket_tab_configuration&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=555b1c451b88d310b2f70fa0604bcb4f"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1774098329</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>cdced6e31b730750b2f70fa0604bcb01</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-18 13:56:47</sys_created_on>
+        <sys_id>dd5b1c451b88d310b2f70fa0604bcb52</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a14f4cfc500000001</sys_recorded_at>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-18 13:56:47</sys_updated_on>
+        <type>Tab Configuration</type>
+        <update_guid>5d5b1c451f88d310b3d33cce567eaf51</update_guid>
+        <update_guid_history>5d5b1c451f88d310b3d33cce567eaf51:1774098329</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">aeecdc891b88d310b2f70fa0604bcbac</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-18 14:03:42</sys_created_on>
+        <sys_db_object display_value="" name="ticket_tab_configuration">ticket_tab_configuration</sys_db_object>
+        <sys_id>03dcec207a0546928112d0c4766abc24</sys_id>
+        <sys_metadata>555b1c451b88d310b2f70fa0604bcb4f</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_scope_delete display_value="">25f8c3211216469491c7eb05de329da9</sys_scope_delete>
+        <sys_update_name>ticket_tab_configuration_555b1c451b88d310b2f70fa0604bcb4f</sys_update_name>
+        <sys_update_version display_value="ticket_tab_configuration_555b1c451b88d310b2f70fa0604bcb4f">dd5b1c451b88d310b2f70fa0604bcb52</sys_update_version>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-18 14:03:42</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

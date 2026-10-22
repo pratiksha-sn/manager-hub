@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_one_extend_resource_attribute_mapping">
+    <sys_one_extend_resource_attribute_mapping action="INSERT_OR_UPDATE">
+        <attribute_value_script><![CDATA[(function runScript(context) {
+    /* Skill Kit tool "get_team_data" (Manager Team Brief skill).
+     * Read-only: collects the logged-in manager's team data for the prompt.
+     * GlideRecordSecure so the manager's own ACLs apply; no birth years are returned. */
+    var me = gs.getUserID();
+    var MAX = 50;
+    var REQUEST = 'x_snp_manager_su_0_manager_support_request';
+    var ACTION = 'x_snp_manager_su_0_follow_up_action';
+    var now = new GlideDateTime();
+    var today = new GlideDate();
+    // Date/time fields shown as date only (GlideDate in the user's format)
+    var dateOnly = function(gr, field) {
+        return gr.getValue(field) ? new GlideDateTime(gr.getValue(field)).getLocalDate().getDisplayValue() : '';
+    };
+    var out = { manager: gs.getUserDisplayName(), today: today.getDisplayValue(),
+        followups: [], requests: [], birthdays: [], anniversaries: [], joiners: [], missing_information: [], journeys: [] };
+
+    // Open follow-up actions on my requests (or assigned to me), overdue or due in 7 days
+    var limit = new GlideDateTime();
+    limit.addDaysLocalTime(7);
+    var fua = new GlideRecordSecure(ACTION);
+    fua.addActiveQuery();
+    fua.addQuery('parent.ref_' + REQUEST + '.opened_for', me).addOrCondition('assigned_to', me);
+    fua.addQuery('due_date', '<=', limit);
+    fua.orderBy('due_date');
+    fua.setLimit(MAX);
+    fua.query();
+    while (fua.next()) {
+        out.followups.push({ number: fua.getValue('number'), action: fua.getValue('short_description'),
+            action_type: fua.getDisplayValue('action_type'), owner: fua.getDisplayValue('assigned_to'),
+            state: fua.getDisplayValue('state'), due_date: dateOnly(fua, 'due_date'),
+            overdue: new GlideDateTime(fua.getValue('due_date')).before(now), request: fua.parent.getDisplayValue(),
+            owner_is_me: fua.getValue('assigned_to') == me });
+    }
+    out.followups_total = out.followups.length;
+
+    // My open Manager Support Requests with approval status
+    var req = new GlideRecordSecure(REQUEST);
+    req.addActiveQuery();
+    req.addQuery('opened_for', me);
+    req.orderBy('due_date');
+    req.setLimit(MAX);
+    req.query();
+    while (req.next()) {
+        out.requests.push({ number: req.getValue('number'), summary: req.getValue('short_description'),
+            employee: req.getDisplayValue('subject_person'), request_type: req.getDisplayValue('request_type'),
+            state: req.getDisplayValue('state'), approval: req.getDisplayValue('approval'),
+            due_date: dateOnly(req, 'due_date') });
+    }
+
+    // Birthdays / work anniversaries in the next 30 days (day and month only), joiners and missing HR dates
+    var nextOccurrence = function(value) {
+        var next = new GlideDate();
+        next.setValue(today.getValue().substring(0, 4) + value.substring(4));
+        if (next.before(today))
+            next.addYearsUTC(1);
+        return { days: GlideDate.subtract(today, next).getDayPart(), label: next.getByFormat('dd MMM'),
+            years: parseInt(next.getValue().substring(0, 4), 10) - parseInt(value.substring(0, 4), 10) };
+    };
+    // Team data (same pattern as OOB Manager Hub Team insights): the HR profile and journey tables are not
+    // queryable by a manager under ACLs, so they are read with GlideRecord, strictly limited to the logged-in
+    // manager's own direct reports, and only day/month dates and counts are returned.
+    var reports = [];
+    var user = new GlideRecord('sys_user');
+    user.addActiveQuery();
+    user.addQuery('manager', me);
+    user.setLimit(MAX);
+    user.query();
+    while (user.next())
+        reports.push(user.getUniqueValue());
+
+    var profileIds = [];
+    var profile = new GlideRecord('sn_hr_core_profile');
+    profile.addQuery('user', 'IN', reports.length ? reports.join(',') : 'none');
+    profile.setLimit(MAX);
+    profile.query();
+    while (profile.next()) {
+        profileIds.push(profile.getUniqueValue());
+        var name = profile.user.getDisplayValue();
+        var dob = profile.getValue('date_of_birth');
+        var start = profile.getValue('employment_start_date');
+        if (!dob)
+            out.missing_information.push({ employee: name, missing: 'Date of birth' });
+        else if (nextOccurrence(dob).days <= 30)
+            out.birthdays.push({ employee: name, date: nextOccurrence(dob).label });
+        var startDate = new GlideDate();
+        if (start)
+            startDate.setValue(start);
+        var sinceStart = start ? GlideDate.subtract(startDate, today).getDayPart() : 0;
+        if (!start)
+            out.missing_information.push({ employee: name, missing: 'Employment start date' });
+        else if (startDate.after(today) || sinceStart <= 30)
+            out.joiners.push({ employee: name, start_date: startDate.getDisplayValue(), upcoming: startDate.after(today) });
+        else if (nextOccurrence(start).days <= 30 && nextOccurrence(start).years > 0)
+            out.anniversaries.push({ employee: name, date: nextOccurrence(start).label, years: nextOccurrence(start).years });
+    }
+
+    out.team_size = reports.length;
+    out.profiles_found = profileIds.length;
+
+    // Active journeys of my direct reports with overdue activities
+    var jny = new GlideRecord('sn_jny_journey');
+    jny.addQuery('employee', 'IN', profileIds.length ? profileIds.join(',') : 'none');
+    jny.addQuery('state', 'IN', 'draft,ready');
+    jny.setLimit(MAX);
+    jny.query();
+    while (jny.next()) {
+        var item = { number: jny.getValue('number'), title: jny.getValue('title'),
+            employee: jny.employee.getDisplayValue(), state: jny.getDisplayValue('state') };
+        var progress = new GlideRecord('sn_jny_journey_progress');
+        progress.addQuery('journey', jny.getUniqueValue());
+        progress.setLimit(1);
+        progress.query();
+        if (progress.next()) {
+            item.activities_total = parseInt(progress.getValue('total'), 10) || 0;
+            item.activities_overdue = parseInt(progress.getValue('overdue_count'), 10) || 0;
+            item.at_risk = item.activities_overdue > 0;
+        }
+        out.journeys.push(item);
+    }
+
+    return JSON.stringify(out);
+})(context);]]></attribute_value_script>
+        <attribute_value_template>(function runScript(context) {
+    /* Skill Kit tool "get_team_data" (Manager Team Brief skill).
+     * Read-only: collects the logged-in manager's team data for the prompt.
+     * GlideRecordSecure so the manager's own ACLs apply; no birth years are returned. */
+    var me = gs.getUserID();
+    var MAX = 50;
+    var REQUEST = 'x_snp_manager_su_0_manager_support_request';
+    var ACTION = 'x_snp_manager_su_0_follow_up_action';
+    var now = new GlideDateTime();
+    var today = new GlideDate();
+    // Date/time fields shown as date only (GlideDate in the user's format)
+    var dateOnly = function(gr, field) {
+        return gr.getValue(field) ? new GlideDateTime(gr.getValue(field)).getLocalDate().getDisplayValue() : '';
+    };
+    var out = { manager: gs.getUserDisplayName(), today: today.getDisplayValue(),
+        followups: [], requests: [], birthdays: [], anniversaries: [], joiners: [], missing_information: [], journeys: [] };
+
+    // Open follow-up actions on my requests (or assigned to me), overdue or due in 7 days
+    var limit = new GlideDateTime();
+    limit.addDaysLocalTime(7);
+    var fua = new GlideRecordSecure(ACTION);
+    fua.addActiveQuery();
+    fua.addQuery('parent.ref_' + REQUEST + '.opened_for', me).addOrCondition('assigned_to', me);
+    fua.addQuery('due_date', '&lt;=', limit);
+    fua.orderBy('due_date');
+    fua.setLimit(MAX);
+    fua.query();
+    while (fua.next()) {
+        out.followups.push({ number: fua.getValue('number'), action: fua.getValue('short_description'),
+            action_type: fua.getDisplayValue('action_type'), owner: fua.getDisplayValue('assigned_to'),
+            state: fua.getDisplayValue('state'), due_date: dateOnly(fua, 'due_date'),
+            overdue: new GlideDateTime(fua.getValue('due_date')).before(now), request: fua.parent.getDisplayValue(),
+            owner_is_me: fua.getValue('assigned_to') == me });
+    }
+    out.followups_total = out.followups.length;
+
+    // My open Manager Support Requests with approval status
+    var req = new GlideRecordSecure(REQUEST);
+    req.addActiveQuery();
+    req.addQuery('opened_for', me);
+    req.orderBy('due_date');
+    req.setLimit(MAX);
+    req.query();
+    while (req.next()) {
+        out.requests.push({ number: req.getValue('number'), summary: req.getValue('short_description'),
+            employee: req.getDisplayValue('subject_person'), request_type: req.getDisplayValue('request_type'),
+            state: req.getDisplayValue('state'), approval: req.getDisplayValue('approval'),
+            due_date: dateOnly(req, 'due_date') });
+    }
+
+    // Birthdays / work anniversaries in the next 30 days (day and month only), joiners and missing HR dates
+    var nextOccurrence = function(value) {
+        var next = new GlideDate();
+        next.setValue(today.getValue().substring(0, 4) + value.substring(4));
+        if (next.before(today))
+            next.addYearsUTC(1);
+        return { days: GlideDate.subtract(today, next).getDayPart(), label: next.getByFormat('dd MMM'),
+            years: parseInt(next.getValue().substring(0, 4), 10) - parseInt(value.substring(0, 4), 10) };
+    };
+    // Team data (same pattern as OOB Manager Hub Team insights): the HR profile and journey tables are not
+    // queryable by a manager under ACLs, so they are read with GlideRecord, strictly limited to the logged-in
+    // manager's own direct reports, and only day/month dates and counts are returned.
+    var reports = [];
+    var user = new GlideRecord('sys_user');
+    user.addActiveQuery();
+    user.addQuery('manager', me);
+    user.setLimit(MAX);
+    user.query();
+    while (user.next())
+        reports.push(user.getUniqueValue());
+
+    var profileIds = [];
+    var profile = new GlideRecord('sn_hr_core_profile');
+    profile.addQuery('user', 'IN', reports.length ? reports.join(',') : 'none');
+    profile.setLimit(MAX);
+    profile.query();
+    while (profile.next()) {
+        profileIds.push(profile.getUniqueValue());
+        var name = profile.user.getDisplayValue();
+        var dob = profile.getValue('date_of_birth');
+        var start = profile.getValue('employment_start_date');
+        if (!dob)
+            out.missing_information.push({ employee: name, missing: 'Date of birth' });
+        else if (nextOccurrence(dob).days &lt;= 30)
+            out.birthdays.push({ employee: name, date: nextOccurrence(dob).label });
+        var startDate = new GlideDate();
+        if (start)
+            startDate.setValue(start);
+        var sinceStart = start ? GlideDate.subtract(startDate, today).getDayPart() : 0;
+        if (!start)
+            out.missing_information.push({ employee: name, missing: 'Employment start date' });
+        else if (startDate.after(today) || sinceStart &lt;= 30)
+            out.joiners.push({ employee: name, start_date: startDate.getDisplayValue(), upcoming: startDate.after(today) });
+        else if (nextOccurrence(start).days &lt;= 30 &amp;&amp; nextOccurrence(start).years &gt; 0)
+            out.anniversaries.push({ employee: name, date: nextOccurrence(start).label, years: nextOccurrence(start).years });
+    }
+
+    out.team_size = reports.length;
+    out.profiles_found = profileIds.length;
+
+    // Active journeys of my direct reports with overdue activities
+    var jny = new GlideRecord('sn_jny_journey');
+    jny.addQuery('employee', 'IN', profileIds.length ? profileIds.join(',') : 'none');
+    jny.addQuery('state', 'IN', 'draft,ready');
+    jny.setLimit(MAX);
+    jny.query();
+    while (jny.next()) {
+        var item = { number: jny.getValue('number'), title: jny.getValue('title'),
+            employee: jny.employee.getDisplayValue(), state: jny.getDisplayValue('state') };
+        var progress = new GlideRecord('sn_jny_journey_progress');
+        progress.addQuery('journey', jny.getUniqueValue());
+        progress.setLimit(1);
+        progress.query();
+        if (progress.next()) {
+            item.activities_total = parseInt(progress.getValue('total'), 10) || 0;
+            item.activities_overdue = parseInt(progress.getValue('overdue_count'), 10) || 0;
+            item.at_risk = item.activities_overdue &gt; 0;
+        }
+        out.journeys.push(item);
+    }
+
+    return JSON.stringify(out);
+})(context);</attribute_value_template>
+        <attribute_value_type>template</attribute_value_type>
+        <from_resource_mapping/>
+        <resource_attribute_name display_value="inputscript">0bd1117b7f211210210ca65c4d8665ed</resource_attribute_name>
+        <resource_mapping display_value="GetTeamData">8afd854d9748171058a53566f053afc3</resource_mapping>
+        <sys_class_name>sys_one_extend_resource_attribute_mapping</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-18 17:38:01</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>cefdc54d9748171058a53566f053af38</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>sys_one_extend_resource_attribute_mapping_cefdc54d9748171058a53566f053af38</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-18 18:46:38</sys_updated_on>
+        <truncate>false</truncate>
+        <type>input</type>
+    </sys_one_extend_resource_attribute_mapping>
+</record_update>

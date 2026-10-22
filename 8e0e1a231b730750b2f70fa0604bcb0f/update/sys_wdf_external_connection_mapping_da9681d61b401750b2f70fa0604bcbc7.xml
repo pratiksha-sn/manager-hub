@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_wdf_external_connection_mapping">
+    <sys_wdf_external_connection_mapping action="INSERT_OR_UPDATE">
+        <asset_id>fa86cd961b401750b2f70fa0604bcbdc</asset_id>
+        <connection_name>Github </connection_name>
+        <connection_type>outbound</connection_type>
+        <connector_type>7bf7f2123decf210f87762d639ed247b</connector_type>
+        <external_system/>
+        <sys_class_name>sys_wdf_external_connection_mapping</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-22 14:18:13</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>da9681d61b401750b2f70fa0604bcbc7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Github </sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>sys_wdf_external_connection_mapping_da9681d61b401750b2f70fa0604bcbc7</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-22 14:18:13</sys_updated_on>
+        <table_name>sys_alias</table_name>
+    </sys_wdf_external_connection_mapping>
+</record_update>

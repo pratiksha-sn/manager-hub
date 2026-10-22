@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_agent_config">
+    <sn_aia_agent_config action="DELETE">
+        <active>true</active>
+        <agent display_value="Manager Team Brief">b3f089c99784171058a53566f053af5a</agent>
+        <agent_descriptor/>
+        <agent_learning>false</agent_learning>
+        <current_version/>
+        <doc_url/>
+        <icon_url/>
+        <public>false</public>
+        <run_as_user/>
+        <specialist_enabled>false</specialist_enabled>
+        <sys_class_name>sn_aia_agent_config</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-18 16:41:21</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>4c01c9c99784171058a53566f053afda</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>sn_aia_agent_config_4c01c9c99784171058a53566f053afda</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-18 16:41:38</sys_updated_on>
+    </sn_aia_agent_config>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</application>
+        <file_path/>
+        <instance_id>c56f6cafebcb06d4cbbffceacad0cdc1</instance_id>
+        <instance_name>simplifynextpteltddemo2</instance_name>
+        <name>sn_aia_agent_config_4c01c9c99784171058a53566f053afda</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_agent_config"><sn_aia_agent_config action="INSERT_OR_UPDATE"><active>true</active><agent display_value="Manager Team Brief">b3f089c99784171058a53566f053af5a</agent><agent_descriptor/><agent_learning>false</agent_learning><current_version/><doc_url/><icon_url/><public>false</public><run_as_user/><specialist_enabled>false</specialist_enabled><sys_class_name>sn_aia_agent_config</sys_class_name><sys_created_by>pratiksha.bhandavale</sys_created_by><sys_created_on>2026-10-18 16:41:21</sys_created_on><sys_domain>global</sys_domain><sys_id>4c01c9c99784171058a53566f053afda</sys_id><sys_mod_count>1</sys_mod_count><sys_name/><sys_overrides/><sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package><sys_policy/><sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope><sys_update_name>sn_aia_agent_config_4c01c9c99784171058a53566f053afda</sys_update_name><sys_updated_by>pratiksha.bhandavale</sys_updated_by><sys_updated_on>2026-10-18 16:41:38</sys_updated_on></sn_aia_agent_config></record_update>]]></payload>
+        <payload_hash>-1164156759</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>cdced6e31b730750b2f70fa0604bcb01</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-18 17:12:33</sys_created_on>
+        <sys_id>8128850d1bc01710b2f70fa0604bcb91</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a1500035b50000001</sys_recorded_at>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-18 17:12:33</sys_updated_on>
+        <type>AI Agent Config</type>
+        <update_guid>c401c9c9b7841710e1526126f3e393de</update_guid>
+        <update_guid_history>c401c9c9b7841710e1526126f3e393de:-1164156759,0c1149c9b84017105b57c02fce8eadf0:1173683676,c401c9c9b7841710e1526126f3e393de:-1164156759</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">9d28c50d1bc01710b2f70fa0604bcb1a</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-18 17:12:34</sys_created_on>
+        <sys_db_object display_value="" name="sn_aia_agent_config">sn_aia_agent_config</sys_db_object>
+        <sys_id>d3a7f9cc71a84a52afb290a8b2ca5d89</sys_id>
+        <sys_metadata>4c01c9c99784171058a53566f053afda</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_scope_delete display_value="">25f8c3211216469491c7eb05de329da9</sys_scope_delete>
+        <sys_update_name>sn_aia_agent_config_4c01c9c99784171058a53566f053afda</sys_update_name>
+        <sys_update_version display_value="sn_aia_agent_config_4c01c9c99784171058a53566f053afda">8128850d1bc01710b2f70fa0604bcb91</sys_update_version>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-18 17:12:34</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

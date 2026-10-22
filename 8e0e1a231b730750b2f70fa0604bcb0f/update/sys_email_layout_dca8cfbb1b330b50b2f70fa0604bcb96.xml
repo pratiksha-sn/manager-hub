@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_email_layout">
+    <sys_email_layout action="INSERT_OR_UPDATE">
+        <advanced>false</advanced>
+        <advanced_layout/>
+        <description>Branded wrapper (header, background, footer) for Manager Support Hub notifications</description>
+        <layout><![CDATA[<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #eef2f7; padding: 24px 0; font-family: Segoe UI,Calibri,Arial,sans-serif;">
+<tbody>
+<tr>
+<td align="center">
+<table width="640" cellpadding="0" cellspacing="0" border="0" style="max-width: 640px; width: 100%; background-color: #ffffff; border: 1px solid #D9E1EC;">
+<tbody>
+<tr>
+<td style="background-color: #1f3864; padding: 18px 28px;"><span style="font-size: 18px; font-weight: bold; color: #ffffff;">Manager Support Hub</span><br><span style="font-size: 12px; color: #c9d6ea;">HR Service Delivery &middot; Employee Center</span></td>
+</tr>
+<tr>
+<td style="background-color: #62d84e; height: 4px; line-height: 4px; font-size: 0;">&nbsp;</td>
+</tr>
+<tr>
+<td style="padding: 24px 28px; font-size: 14px; line-height: 1.5; color: #1f2328;">${notification:body}</td>
+</tr>
+<tr>
+<td style="background-color: #f6f8fb; padding: 14px 28px; font-size: 11px; color: #6b7785; border-top: 1px solid #E3E8EF;">This is an automated message from the Manager Support Hub. Please do not reply to this email.<br>Open Employee Center to view your requests, approvals and follow-up actions.</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>]]></layout>
+        <name>Manager Support Hub layout</name>
+        <sys_class_name>sys_email_layout</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-15 05:22:04</sys_created_on>
+        <sys_id>dca8cfbb1b330b50b2f70fa0604bcb96</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Manager Support Hub layout</sys_name>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>sys_email_layout_dca8cfbb1b330b50b2f70fa0604bcb96</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-15 05:22:04</sys_updated_on>
+    </sys_email_layout>
+</record_update>

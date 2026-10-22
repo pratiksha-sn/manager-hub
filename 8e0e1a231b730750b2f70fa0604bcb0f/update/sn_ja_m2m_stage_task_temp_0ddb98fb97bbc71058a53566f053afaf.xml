@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_ja_m2m_stage_task_temp">
+    <sn_ja_m2m_stage_task_temp action="INSERT_OR_UPDATE">
+        <approved_at/>
+        <ja_stage_config display_value="First week">33ab14fb97bbc71058a53566f053af91</ja_stage_config>
+        <ja_task_template display_value="TEMPLATE7">04fe4c3f973bc71058a53566f053afd8</ja_task_template>
+        <order>100</order>
+        <sys_class_name>sn_ja_m2m_stage_task_temp</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-14 16:46:32</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>0ddb98fb97bbc71058a53566f053afaf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>First week.TEMPLATE7</sys_name>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>sn_ja_m2m_stage_task_temp_0ddb98fb97bbc71058a53566f053afaf</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-14 16:46:32</sys_updated_on>
+    </sn_ja_m2m_stage_task_temp>
+</record_update>

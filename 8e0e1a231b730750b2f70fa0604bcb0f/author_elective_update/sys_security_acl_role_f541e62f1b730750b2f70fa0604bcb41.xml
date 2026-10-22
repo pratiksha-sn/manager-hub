@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="DELETE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-14 07:51:06</sys_created_on>
+        <sys_id>f541e62f1b730750b2f70fa0604bcb41</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snp_manager_su_0_follow_up_action.x_snp_manager_su_0.manager</sys_name>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_security_acl display_value="x_snp_manager_su_0_follow_up_action">a141a62f1b730750b2f70fa0604bcbba</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_f541e62f1b730750b2f70fa0604bcb41</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-14 07:51:06</sys_updated_on>
+        <sys_user_role display_value="x_snp_manager_su_0.manager" name="x_snp_manager_su_0.manager">d93fd2671b730750b2f70fa0604bcbb4</sys_user_role>
+    </sys_security_acl_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</application>
+        <file_path/>
+        <instance_id>c56f6cafebcb06d4cbbffceacad0cdc1</instance_id>
+        <instance_name>simplifynextpteltddemo2</instance_name>
+        <name>sys_security_acl_role_f541e62f1b730750b2f70fa0604bcb41</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="INSERT_OR_UPDATE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>pratiksha.bhandavale</sys_created_by><sys_created_on>2026-10-14 07:51:06</sys_created_on><sys_id>f541e62f1b730750b2f70fa0604bcb41</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_snp_manager_su_0_follow_up_action.x_snp_manager_su_0.manager</sys_name><sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package><sys_policy/><sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope><sys_security_acl display_value="x_snp_manager_su_0_follow_up_action">a141a62f1b730750b2f70fa0604bcbba</sys_security_acl><sys_update_name>sys_security_acl_role_f541e62f1b730750b2f70fa0604bcb41</sys_update_name><sys_updated_by>pratiksha.bhandavale</sys_updated_by><sys_updated_on>2026-10-14 07:51:06</sys_updated_on><sys_user_role display_value="x_snp_manager_su_0.manager" name="x_snp_manager_su_0.manager">d93fd2671b730750b2f70fa0604bcbb4</sys_user_role></sys_security_acl_role></record_update>]]></payload>
+        <payload_hash>1990172882</payload_hash>
+        <record_name>x_snp_manager_su_0_follow_up_action.x_snp_manager_su_0.manager</record_name>
+        <reverted_from/>
+        <source>cdced6e31b730750b2f70fa0604bcb01</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-14 07:51:06</sys_created_on>
+        <sys_id>b5412a2f1b730750b2f70fa0604bcb0d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a13964c1ee0000001</sys_recorded_at>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-14 07:51:06</sys_updated_on>
+        <type>Access Roles</type>
+        <update_guid>35412a2fa573075032b292f64c10060c</update_guid>
+        <update_guid_history>35412a2fa573075032b292f64c10060c:1990172882</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="x_snp_manager_su_0_follow_up_action.x_snp_manager_su_0.manager">273aa26f1bf30750b2f70fa0604bcb00</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-14 08:30:16</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl_role">sys_security_acl_role</sys_db_object>
+        <sys_id>42d8d534b4834000b219a53c02400000</sys_id>
+        <sys_metadata>f541e62f1b730750b2f70fa0604bcb41</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snp_manager_su_0_follow_up_action.x_snp_manager_su_0.manager</sys_name>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_parent display_value="">a141a62f1b730750b2f70fa0604bcbba</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_scope_delete display_value="">25f8c3211216469491c7eb05de329da9</sys_scope_delete>
+        <sys_update_name>sys_security_acl_role_f541e62f1b730750b2f70fa0604bcb41</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_role_f541e62f1b730750b2f70fa0604bcb41">b5412a2f1b730750b2f70fa0604bcb0d</sys_update_version>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-14 08:30:16</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

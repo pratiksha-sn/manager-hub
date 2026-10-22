@@ -1,0 +1,1326 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <allow_high_security_roles>false</allow_high_security_roles>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=5471000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>29000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>close_msr_when_all_follow_ups</internal_name>
+        <label_cache>[{"name":"61324426-03ae-4be9-aa8e-40c268faef19.Record","label":"3 - Look Up Record➛Manager Support Request Record","reference":"x_snp_manager_su_0_manager_support_request","reference_display":"Manager Support Request","type":"reference","base_type":"reference","usedInstances":{"8f97c609-009d-4280-a81f-7e16d36155c9":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"61324426-03ae-4be9-aa8e-40c268faef19.status","label":"3 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"usedInstances":{"cde9d3d0-9141-4541-8bd2-553b32e9fd9a":["condition"]},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"Updated_1.current.parent.sys_id","label":"Trigger - Record Updated➛Follow Up Action Record➛Parent➛Sys ID","reference":"","reference_display":"Sys ID","type":"GUID","base_type":"GUID","parent_table_name":"task","column_name":"sys_id","usedInstances":{"61324426-03ae-4be9-aa8e-40c268faef19":["conditions"]}},{"name":"16937326-a01f-431c-80c7-c678e0bca5d4.Count","label":"1 - Look Up Records➛Count","reference_display":"Count","type":"integer","base_type":"integer","usedInstances":{"904b1812-cdd4-4c7b-be7c-40d37db4231b":["condition"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"Updated_1.current.parent","label":"Trigger - Record Updated➛Follow Up Action Record➛Parent","reference":"task","reference_display":"Task","type":"reference","base_type":"reference","parent_table_name":"x_snp_manager_su_0_follow_up_action","column_name":"parent","usedInstances":{"16937326-a01f-431c-80c7-c678e0bca5d4":[null],"8f97c609-009d-4280-a81f-7e16d36155c9":["record"]}}]</label_cache>
+        <master_snapshot>dfc7245997c8d71058a53566f053afe7</master_snapshot>
+        <master_snapshot_digest/>
+        <name>Close MSR when all follow ups</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id>129fa4111bc4d710b2f70fa0604bcba7</remote_trigger_id>
+        <run_as>system</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 08:32:34</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>f5ba94599708d71058a53566f053af3c</sys_id>
+        <sys_mod_count>38</sys_mod_count>
+        <sys_name>Close MSR when all follow ups</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>sys_hub_flow_f5ba94599708d71058a53566f053af3c</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 10:03:53</sys_updated_on>
+        <type>flow</type>
+        <updation_source/>
+        <version>2</version>
+        <version_record>e29fe4111bc4d710b2f70fa0604bcb1d</version_record>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=f5ba94599708d71058a53566f053af3c"/>
+    <sys_variable_value action="delete_multiple" query="document_key=f5ba94599708d71058a53566f053af3c"/>
+    <sys_flow_record_trigger action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition table="x_snp_manager_su_0_follow_up_action">activeCHANGESTOfalse<item endquery="false" field="active" goto="false" newquery="false" operator="CHANGESTO" or="false" value="false"/>
+        </condition>
+        <name/>
+        <on_delete>false</on_delete>
+        <on_insert>false</on_insert>
+        <on_update>true</on_update>
+        <published_version/>
+        <run_flow_in>background</run_flow_in>
+        <run_on_extended>false</run_on_extended>
+        <run_when_setting>both</run_when_setting>
+        <run_when_user_list/>
+        <run_when_user_setting>any</run_when_user_setting>
+        <sys_class_name>sys_flow_record_trigger</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 10:03:48</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>129fa4111bc4d710b2f70fa0604bcba7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 10:03:48</sys_updated_on>
+        <table>x_snp_manager_su_0_follow_up_action</table>
+        <trigger_definition/>
+    </sys_flow_record_trigger>
+    <sys_trigger_runner_mapping action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <data>{"run_flow_in":"background","run_when_user_list":[],"run_when_setting":"both","run_when_user_setting":"any","run_on_extended":"false"}</data>
+        <identifier>f5ba94599708d71058a53566f053af3c</identifier>
+        <identifier_type>flow</identifier_type>
+        <runner>FDTriggerRunner</runner>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 10:03:48</sys_created_on>
+        <sys_id>569fa4111bc4d710b2f70fa0604bcba8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 10:03:48</sys_updated_on>
+        <trigger display_value="">129fa4111bc4d710b2f70fa0604bcba7</trigger>
+    </sys_trigger_runner_mapping>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=f5ba94599708d71058a53566f053af3c^sys_idNOT IN569fa4111bc4d710b2f70fa0604bcba8"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=f5ba94599708d71058a53566f053af3c"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=f5ba94599708d71058a53566f053af3c^sys_idNOT IN3dba94599708d71058a53566f053af3d"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>f5ba94599708d71058a53566f053af3c</id>
+        <name>Close MSR when all follow ups</name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 08:32:34</sys_created_on>
+        <sys_id>3dba94599708d71058a53566f053af3d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 08:32:34</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=3dba94599708d71058a53566f053af3d"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=f5ba94599708d71058a53566f053af3c^sys_idNOT IN70ca1c599708d71058a53566f053af43,85ca1c599708d71058a53566f053afbc,b4ca1c599708d71058a53566f053afb0"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name,uiTypeLabel=Table Name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Close MSR when all follow ups">f5ba94599708d71058a53566f053af3c</model>
+        <model_id>f5ba94599708d71058a53566f053af3c</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_f5ba94599708d71058a53566f053af3c</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 08:32:46</sys_created_on>
+        <sys_id>70ca1c599708d71058a53566f053af43</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:29:43</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=70ca1c599708d71058a53566f053af43"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>child_label=FDChangeDetails,child_name=FDChangeDetails,child_type=object,child_type_label=Object,co_type_name=FDCollection,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=array.object,uiTypeLabel=Array.Object</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>changed_fields</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Changed Fields</label>
+        <mandatory>false</mandatory>
+        <max_length>4000</max_length>
+        <model display_value="Close MSR when all follow ups">f5ba94599708d71058a53566f053af3c</model>
+        <model_id>f5ba94599708d71058a53566f053af3c</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_f5ba94599708d71058a53566f053af3c</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 08:32:47</sys_created_on>
+        <sys_id>85ca1c599708d71058a53566f053afbc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 08:32:47</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=85ca1c599708d71058a53566f053afbc"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id,uiTypeLabel=Document ID</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Close MSR when all follow ups">f5ba94599708d71058a53566f053af3c</model>
+        <model_id>f5ba94599708d71058a53566f053af3c</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_f5ba94599708d71058a53566f053af3c</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 08:32:47</sys_created_on>
+        <sys_id>b4ca1c599708d71058a53566f053afb0</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:29:43</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=b4ca1c599708d71058a53566f053afb0"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=f5ba94599708d71058a53566f053af3c"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=f5ba94599708d71058a53566f053af3c"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=f5ba94599708d71058a53566f053af3c^sys_idNOT INaccad8599708d71058a53566f053af4c"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Close MSR when all follow ups">f5ba94599708d71058a53566f053af3c</flow>
+        <generation_source/>
+        <name>Updated</name>
+        <published_version/>
+        <remote_sys_id/>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 08:32:45</sys_created_on>
+        <sys_id>accad8599708d71058a53566f053af4c</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 10:03:44</sys_updated_on>
+        <trigger_definition display_value="Updated">bb695e60c31322002841b63b12d3aea5</trigger_definition>
+        <trigger_inputs>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</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>record_update</trigger_type>
+        <updation_source/>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=f5ba94599708d71058a53566f053af3c^sys_idNOT IN230ea8951b84d710b2f70fa0604bcbc7,80c66c1597c8d71058a53566f053af30,be17289597c8d71058a53566f053afff"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Close MSR when all follow ups">f5ba94599708d71058a53566f053af3c</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id>904b1812-cdd4-4c7b-be7c-40d37db4231b</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 09:57:04</sys_created_on>
+        <sys_id>230ea8951b84d710b2f70fa0604bcbc7</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2026-10-19 10:04:07</sys_updated_on>
+        <ui_id>61324426-03ae-4be9-aa8e-40c268faef19</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VYXW/jKhD9K5af01w7X076dtUq0kq7W6nt7svuCmGDE3QJdgH3K8p/v4PBjpW4SaybSq3uUwQMcGbmnGGcX2ufEf/SJ7Ngls5m42kUBMNhEEwmwwSHcTycJHEQ45Hf8wVeUbDUOOYUho+YF2b8jJTI0QoLvKASqQIFjUGeZ1IjSR8KqjRsIkzlHL/8dHu/WUPvzhp6t7VhsmScSCr8y19/en6OJVyuqfQv1ztLp6LnOKYcTO8d/B1v9EteD1G5Zue+Nrd53+1CJomBEvR8+qypIBQwpJgr2vPBdYJ1Jl/qGUkxuRF8O7FkQsOJvjF+VuwV7p0Gxi6l4FVC7Vo9RC5mdjq9xhrfaVkkupDONFlmLKHKxoPQFBdcXzXnrMFNrlkm7Bbrtt2d8WIlvttw+PUBVYpgplAAgubGUYPcuZHeLbOn2wrlnIkyJm6RZwnm9QhrLVlcaINn7VNOV3AQsCTPmVigXGaPrNwMWFb9BYdBP+XZE1yq2EL0cWKA9yGuuD+H+ety+ieWzHjxDY6BzQCIcWAIsilUWSHLUD6ihBeqXJBYKHuWv+n56kVdcazU1nMIOXooDG4bB+cxskEzWxLJcv03HPFInXObXiWg8UEKzraUSzJBmEGhGioCNIiR3wVsJuv1jxycpQSF/aSQEF/dBwWYH2u22exLqfsBHSV23L9KYldNB9ucdmLbm/vadoATW3g2sY2C4DPJDS7/eGrrrh8bgiMiCslBkpEtn5R5V2wsGyral0Vnnp8AoeL5jWGmF7+8hcrRPGWUk7Y3ZW4Wdt6Uwf/zTfmQJAdABNnsMcGZKBsEAPpe7B8fpF4c7vCspFfjBTFzWCX7GsCezrzXzko4AU6lhDvTvN1bPC0Qq3pfUma31leTTgDDswlgODiPANa1m3UgW2Je9YQmm5X9q7HHu/ZAwcaGcNMmsE53hl3vHGz2BTzspOAm2ezK9RucO3Pz+IYie+9ZApaw1d2HrH7REyMLqre3V1Yk00+Y/9O27hiHqkSV7r1DIxoe/BaKG40oS9EKMsdy6JclTYAcCkGXiNKsEAS5TnlLJJPJlEmlnfF+obmloB/hZSBMTy+pV1p7tXXHh/i4H1Uov6Re5Yi7TXngiFc64tWOdHO7S9EanbE5PXfRmmPGy2zAR1DeSCeVMpNvFK4jiTzAiBOr2omgwrOC+u9lr00CreXvCNZP8UV9/tKUUByPBngSDcMwCMKARME0isLpJE4nOBqlW40ipEQC1RROToEqcDyqqFHlOdivP7akdi00J6CqKHidCfOFPYi0Z2BBfr0K1nHgrqDEWcYpFjsV5R7eib/mDr/j6/jDVZVP8f9Swe53I22nWmP9Xn1DwX4I9lDQL4ZiUxoMpiFJLqZRGF2MUjK5mBE8vsCzeBwNCU1G6TlbgT//AsNML1vWFQAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=230ea8951b84d710b2f70fa0604bcbc7"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Close MSR when all follow ups">f5ba94599708d71058a53566f053af3c</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 09:25:09</sys_created_on>
+        <sys_id>80c66c1597c8d71058a53566f053af30</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2026-10-19 10:04:07</sys_updated_on>
+        <ui_id>16937326-a01f-431c-80c7-c678e0bca5d4</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VXW2vbMBT+K8bPJthNmnZ9Gy2BQS/Q28vWCdmSEzFF9iQ5aRry33d0sWMSt0tYCi171LlI3znn+2T5+zJkJDwLT/NBHOPk+PQkjvv9OB4O+xlO0rQ/zNI4HaRhFAo8pRCpccopLGeYV2b9jJQo0RQLPKYSqQrFKC84L+aoKhHONCsERBOmSo4Xjz5pZCOChzL4WkdkE8aJpCI8+/4UhSWWcJymMjxbbrh2xctxSjmE3nvAG/j1omyWyPqc7bKdFlw7RyGJgRJHIX3WVBAKGHLMFY1CqJxgXchFY5EUkxvB14YJExp2DE3ws2IvcO5pbOJyClVl1PmaJfLNcub8Amt8p2WV6Ur60GxSsIwq1w9Cc1xxfd62uYCb0vbWpriyXXbBq6m4du0Imw3q2YClUgCClqZQg9yXkd9NivltjXLEhO2Jd/Iiw7xZYa0lSytt8CxDyukUNgKSlCUTY1TKYsZsMmCZ9sYcFr3cUIZQxcai52jTg77i3gjsF9b8iCUzVVzBNpAMgBgHhiA3QlVU0rZyhjJeKeuQWChPwVUUqoU651ipdeXQcvS7MrhdH3zFyDXNpGSSldpwdEZ9catoJ8kcx2vKZYUgzKBQLd1gu+mPCpIJTJf+BMrD2c6wXD6UUD0lKOlllTSOnvOvVttq+petDik7W3Mtu/N20V2N8ALcsl12beAFmBxMgFDHZ5KgGeuHU+D+mnIt+IuwspM3SXa85pMqpEauly1lbQtkb57vAKHm+Y1hZpAuXkPlaZ4zyknXd2ZkHBvfmaP/8zvzIUkOgAhy02OCM2EfDQD0vdgfv33FftngmaXXmvvWhlXW8ZEIdBG87K2EHeDUSriDs4N7h6cDYn3fW8ps3vW10QugfzAB9I8OI4BlU2bTyI6e1+9EM806/sXE4814oGArIVl1CWyvM5N9zzxabQu4v5eC22RznotXOHfgB+Urioze8wqYQKo/Dzn9ojkjY6rXp9dRpNBzzH91+T3jUD0oW947PE4Hb8p2mKwlCkpBkioYXvt1msDzaPsOSSJn3u8K2QFL3Y4r/BzcNmA6EfprBJROx3Y27XvkW2P1JB8c8MH4Yb+k9bA6NVjP7FP80x1OCE9/AJfeheDaEAAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=80c66c1597c8d71058a53566f053af30"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Close MSR when all follow ups">f5ba94599708d71058a53566f053af3c</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>cde9d3d0-9141-4541-8bd2-553b32e9fd9a</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 09:26:42</sys_created_on>
+        <sys_id>be17289597c8d71058a53566f053afff</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2026-10-19 10:04:07</sys_updated_on>
+        <ui_id>8f97c609-009d-4280-a81f-7e16d36155c9</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVTU/jMBD9K1HOpUqaUrW9ISqklfiQyooLC9bEmbQWjh1sp9Ct+t93krhtBIgFicOi7akznrHfe/ab3G5CkYXTcIhZFE/iEU/iJBlE0WA8jNNRksaDLAHEOOyFCgqkSoNcm4ziFciqTmw2ozgZDIeD0VFEtUfDFCdHAGP6F/HBaJwD5vGkP2/6tlvqzIQtJaxv/AaU4UshM4MqnN7e9cISDJ3l0ITTzYulj4KVkKKk0vkO7Uv0bl3WcaZ5VaByTOyS575z5leCHzNaoaYaThz1Qnx2qDIkIDlIi72wAJWB02YdTp2pKGEQsisl1/uKpVCuJVrAsxW/6eRhVNflSMy4F2EfMi9Qm85n4OCaduauMnu9tOBoW00yzKGS7rSbawuuSie0alscpHLXrWVVqMtWkXC/Qec+KksgsKx51shbWvn1Uj/NdyDPhGok8RSl5iD3EThnRFq5Gs4mRImNxgWUpVALVhq9Ek0zQSn6C0lBP5f6ic60YqH6wGvcfVIV+meUnzXpGzCiJnFB21DzthfatT2VYO2BCmnIHqsaSUvMU2CNCo0ErHkJdTM3onQndNQKPfBtz9shPX7vhfHJ4UF19jxY4plZVRJdBQs0zFYs6gRlqY1jBh8rtO61Gy7awuC6LQzm+8LPmeQDFHYm+dk8jbcpeZ+8yp13e4PLdsG75PjLXDL+Ti7xNL69Tf5mjmjw7vjtvKTGD7ZjDPsgSgaV0wU4wRkJaBhwjqWD+katA4e/qihKsvqN3Hfi5P5JmwemNInVZk6kDHItiXdQlUGrhQ2WsMIgRVQBl9pi1rO6+UeCBt6Dgfdg4D3Yf23Cfxbn52bAB25qNwPOBMrMvnF1uwGABQnkkLVX+WII+MXgxi/uP5dfNgniUdT8vtE8+G++mnd/AFEo9m9GCgAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=be17289597c8d71058a53566f053afff"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=f5ba94599708d71058a53566f053af3c"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=f5ba94599708d71058a53566f053af3c^sys_idNOT IN0db7ac1997c8d71058a53566f053afa5,4007209597c8d71058a53566f053afef,a4a7681997c8d71058a53566f053afac,f48ea0191b84d710b2f70fa0604bcb4f,fa2ea0d51b84d710b2f70fa0604bcbfb"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">4bc7245997c8d71058a53566f053af8d</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Close MSR when all follow ups">f5ba94599708d71058a53566f053af3c</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>8</order>
+        <outputs_assigned/>
+        <parent_ui_id>322c028a-f20a-47eb-98a4-fdd112909a85</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 09:29:19</sys_created_on>
+        <sys_id>0db7ac1997c8d71058a53566f053afa5</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 10:03:45</sys_updated_on>
+        <ui_id>1334d078-72aa-44bd-bf6c-41731ef091ef</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">c3c7245997c8d71058a53566f053af5f</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Close MSR when all follow ups">f5ba94599708d71058a53566f053af3c</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 09:26:14</sys_created_on>
+        <sys_id>4007209597c8d71058a53566f053afef</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 10:03:44</sys_updated_on>
+        <ui_id>904b1812-cdd4-4c7b-be7c-40d37db4231b</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+2UXWvbMBSG/8rwtWNkO3Y+7kpHYbCtsJbebMUcS3IiJkueJCfNQv77jvyRhDVlpfRyd9Yrn3Pe8/rB+0C3rmmdvddX1oqVCpbfH8NAKK/h8z5QUPNgGVCtmHBCq6ITwmADsvUX+MiEbSTsHk4KXQvJDB+6NWCwxnETLPd/XbldwwsJJZdYeOeMUCssFwxPFYEqXtCYpkmeJoQk82lc5mkZJywFDim+NxZej+Y+fO6U8EXXfh7qdpykDfO2YhIG/MlxxTiOrkBaHgY1KAZOm91RMRzYrZInYS2U6zeu4cmK39g7yTL/YsVxRzrEcTwWQ1RjSlpQftt4g73ioJRjhFq2tfra7+FD5hW00p2F3Frsxxtv2rsYLFV3a739Ng68EapbcLiUmoI8nsBhDGXruPUfhkteY6OihqbBcIrG6I3oitFLHa0kHqJK6i0O9aREQL3xCDOC6Ab1j538AEb4Lb5gGyzubZZgBS06qrCdM7jCoYul+NV6Q/2CwypFnwa+YKkRjbvCORs+uD6Ez5E8o3G/j/NFOkNkJkDiajJNYzqZEzqb0Hw256SkkLFpdK1b5Q6HHy0hKSPPEX5rm/fgfgFZlcUku8z9NL/E/QXiX4Y9+Qfs/vO8knVCyH/Yz2EXtuihHXbrhr+Z9UcPdj/B9twwToVFI/de+zT+pf3FDgEQ9FzaavPTr3DSDn8AVzavLe8FAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">87c7245997c8d71058a53566f053af8b</block>
+        <comment/>
+        <connected_to>904b1812-cdd4-4c7b-be7c-40d37db4231b</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Close MSR when all follow ups">f5ba94599708d71058a53566f053af3c</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>7</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 09:29:00</sys_created_on>
+        <sys_id>a4a7681997c8d71058a53566f053afac</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 10:03:45</sys_updated_on>
+        <ui_id>322c028a-f20a-47eb-98a4-fdd112909a85</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">318e64191b84d710b2f70fa0604bcb24</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Close MSR when all follow ups">f5ba94599708d71058a53566f053af3c</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>6</order>
+        <outputs_assigned/>
+        <parent_ui_id>cde9d3d0-9141-4541-8bd2-553b32e9fd9a</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 09:59:03</sys_created_on>
+        <sys_id>f48ea0191b84d710b2f70fa0604bcb4f</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 10:03:45</sys_updated_on>
+        <ui_id>01ce3e69-e8a3-4710-93f5-c0489b0b2695</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">f58e24191b84d710b2f70fa0604bcbfa</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Close MSR when all follow ups">f5ba94599708d71058a53566f053af3c</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id>904b1812-cdd4-4c7b-be7c-40d37db4231b</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 09:57:34</sys_created_on>
+        <sys_id>fa2ea0d51b84d710b2f70fa0604bcbfb</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 10:03:44</sys_updated_on>
+        <ui_id>cde9d3d0-9141-4541-8bd2-553b32e9fd9a</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+2UX2vbMBTFv8rws2NkOzFJ3spKYbCtsJa+bMVcy9eJmCx5kpw0C/nuu/KfJLQpG6WPe5OOpHvPPf7hfaBb17TO3usra8VKBcvvj2EglNdovQ8U1BgsA65VKZzQKu+EMNiAbP0BLUthGwm7h5PC10KWBodqDRh649AEy/2zI7drMJdQoKSHd84ItaLnoqRdxaCKFzzmaZKlCWPJfBoXWVrESZkCQkr3xocfR3MfPndK+Kpr3490O3bSpvS2YhYG+ORQlUitK5AWw6AGVYLTZndUDEJ5q+RJWAvl+olreLLiN9VOZjN/sUKakQ9xHLf5ENWYkhYcbxtvsFccFHKMUMu2Vl/7OXzIWEEr3VnIraV62HjT3sVgqbpb6+23seGNUN2Aw6HUHORxB45iKFqH1n8YlFhTobyGpqFw8sbojegek5c6WknaRJXUW2rqSYmAe+MRZQTRDenXnfwARvgpvlAZetzbLMAKnndUUTlnaIRDF0v+q/WG+gGHUfI+DbpguRGNu6I+GxxcH8KXSJ7RuN9ncZpMp0k2YUTJZFrgYgIwpxXjSTavAAmqyDpwrT0cfrSMpSV7yfCb67wH+QuYVbOYzS6TP80ukX+B+ddxT/6Cu/9A/0g7Y+w/7ue4C5v32A6zdc3fTPujR7vvYHtuSuTCkpF7r30a/9P+YEcACH4ubbX56Uc4aYc/OwN0mPEFAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=f5ba94599708d71058a53566f053af3c"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=f5ba94599708d71058a53566f053af3c"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_variable_f5ba94599708d71058a53566f053af3c"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_f5ba94599708d71058a53566f053af3c</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 08:32:47</sys_created_on>
+        <sys_id>8dca1c599708d71058a53566f053afb7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 08:32:47</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>changed_fields</element>
+        <help/>
+        <hint/>
+        <label>Changed Fields</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_f5ba94599708d71058a53566f053af3c</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 08:32:48</sys_created_on>
+        <sys_id>8dca1c599708d71058a53566f053afc4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 08:32:48</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_f5ba94599708d71058a53566f053af3c</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 08:32:47</sys_created_on>
+        <sys_id>b8ca1c599708d71058a53566f053af9e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 08:32:47</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_f5ba94599708d71058a53566f053af3c"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_f5ba94599708d71058a53566f053af3c"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <allow_high_security_roles>false</allow_high_security_roles>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>29000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>close_msr_when_all_follow_ups</internal_name>
+        <label_cache>[{"name":"61324426-03ae-4be9-aa8e-40c268faef19.Record","label":"3 - Look Up Record➛Manager Support Request Record","reference":"x_snp_manager_su_0_manager_support_request","reference_display":"Manager Support Request","type":"reference","base_type":"reference","usedInstances":{"8f97c609-009d-4280-a81f-7e16d36155c9":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"61324426-03ae-4be9-aa8e-40c268faef19.status","label":"3 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"usedInstances":{"cde9d3d0-9141-4541-8bd2-553b32e9fd9a":["condition"]},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"Updated_1.current.parent.sys_id","label":"Trigger - Record Updated➛Follow Up Action Record➛Parent➛Sys ID","reference":"","reference_display":"Sys ID","type":"GUID","base_type":"GUID","parent_table_name":"task","column_name":"sys_id","usedInstances":{"61324426-03ae-4be9-aa8e-40c268faef19":["conditions"]}},{"name":"16937326-a01f-431c-80c7-c678e0bca5d4.Count","label":"1 - Look Up Records➛Count","reference_display":"Count","type":"integer","base_type":"integer","usedInstances":{"904b1812-cdd4-4c7b-be7c-40d37db4231b":["condition"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"Updated_1.current.parent","label":"Trigger - Record Updated➛Follow Up Action Record➛Parent","reference":"task","reference_display":"Task","type":"reference","base_type":"reference","parent_table_name":"x_snp_manager_su_0_follow_up_action","column_name":"parent","usedInstances":{"16937326-a01f-431c-80c7-c678e0bca5d4":[null],"8f97c609-009d-4280-a81f-7e16d36155c9":["record"]}}]</label_cache>
+        <master>true</master>
+        <name>Close MSR when all follow ups</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Close MSR when all follow ups">f5ba94599708d71058a53566f053af3c</parent_flow>
+        <remote_trigger_id/>
+        <run_as>system</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 09:29:44</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>dfc7245997c8d71058a53566f053afe7</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 10:03:47</sys_updated_on>
+        <type>flow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=dfc7245997c8d71058a53566f053afe7"/>
+    <sys_variable_value action="delete_multiple" query="document_key=dfc7245997c8d71058a53566f053afe7"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=dfc7245997c8d71058a53566f053afe7"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=dfc7245997c8d71058a53566f053afe7^sys_idNOT INdfc7245997c8d71058a53566f053afea"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>dfc7245997c8d71058a53566f053afe7</id>
+        <name>Close MSR when all follow ups</name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 09:29:44</sys_created_on>
+        <sys_id>dfc7245997c8d71058a53566f053afea</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:29:44</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=dfc7245997c8d71058a53566f053afea"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=dfc7245997c8d71058a53566f053afe7^sys_idNOT IN1fc7645997c8d71058a53566f053af79,53c7245997c8d71058a53566f053afed,d3c7645997c8d71058a53566f053af54"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Close MSR when all follow ups">dfc7245997c8d71058a53566f053afe7</model>
+        <model_id>dfc7245997c8d71058a53566f053afe7</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_dfc7245997c8d71058a53566f053afe7</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 09:29:45</sys_created_on>
+        <sys_id>1fc7645997c8d71058a53566f053af79</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 10:03:47</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=1fc7645997c8d71058a53566f053af79"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Close MSR when all follow ups">dfc7245997c8d71058a53566f053afe7</model>
+        <model_id>dfc7245997c8d71058a53566f053afe7</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_dfc7245997c8d71058a53566f053afe7</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 09:29:44</sys_created_on>
+        <sys_id>53c7245997c8d71058a53566f053afed</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 10:03:47</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=53c7245997c8d71058a53566f053afed"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>child_label=FDChangeDetails,child_name=FDChangeDetails,child_type=object,child_type_label=Object,co_type_name=FDCollection,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=array.object,uiTypeLabel=Array.Object</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>changed_fields</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Changed Fields</label>
+        <mandatory>false</mandatory>
+        <max_length>4000</max_length>
+        <model display_value="Close MSR when all follow ups">dfc7245997c8d71058a53566f053afe7</model>
+        <model_id>dfc7245997c8d71058a53566f053afe7</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_dfc7245997c8d71058a53566f053afe7</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 09:29:45</sys_created_on>
+        <sys_id>d3c7645997c8d71058a53566f053af54</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:45:06</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=d3c7645997c8d71058a53566f053af54"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=dfc7245997c8d71058a53566f053afe7"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=dfc7245997c8d71058a53566f053afe7"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=dfc7245997c8d71058a53566f053afe7^sys_idNOT INefc7645997c8d71058a53566f053afa4"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Close MSR when all follow ups">dfc7245997c8d71058a53566f053afe7</flow>
+        <generation_source/>
+        <name>Updated</name>
+        <published_version/>
+        <remote_sys_id/>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 09:29:45</sys_created_on>
+        <sys_id>efc7645997c8d71058a53566f053afa4</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 10:03:47</sys_updated_on>
+        <trigger_definition display_value="Updated">bb695e60c31322002841b63b12d3aea5</trigger_definition>
+        <trigger_inputs>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</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>record_update</trigger_type>
+        <updation_source/>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=dfc7245997c8d71058a53566f053afe7^sys_idNOT IN6a8ea4191b84d710b2f70fa0604bcb61,6bc7645997c8d71058a53566f053afa2,a3c7645997c8d71058a53566f053afa1"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Close MSR when all follow ups">dfc7245997c8d71058a53566f053afe7</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id>904b1812-cdd4-4c7b-be7c-40d37db4231b</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 09:59:11</sys_created_on>
+        <sys_id>6a8ea4191b84d710b2f70fa0604bcb61</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:59:11</sys_updated_on>
+        <ui_id>61324426-03ae-4be9-aa8e-40c268faef19</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VYXW/jKhD9K5af01w7X076dtUq0kq7W6nt7svuCmGDE3QJdgH3K8p/v4PBjpW4SaybSq3uUwQMcGbmnGGcX2ufEf/SJ7Ngls5m42kUBMNhEEwmwwSHcTycJHEQ45Hf8wVeUbDUOOYUho+YF2b8jJTI0QoLvKASqQIFjUGeZ1IjSR8KqjRsIkzlHL/8dHu/WUPvzhp6t7VhsmScSCr8y19/en6OJVyuqfQv1ztLp6LnOKYcTO8d/B1v9EteD1G5Zue+Nrd53+1CJomBEvR8+qypIBQwpJgr2vPBdYJ1Jl/qGUkxuRF8O7FkQsOJvjF+VuwV7p0Gxi6l4FVC7Vo9RC5mdjq9xhrfaVkkupDONFlmLKHKxoPQFBdcXzXnrMFNrlkm7Bbrtt2d8WIlvttw+PUBVYpgplAAgubGUYPcuZHeLbOn2wrlnIkyJm6RZwnm9QhrLVlcaINn7VNOV3AQsCTPmVigXGaPrNwMWFb9BYdBP+XZE1yq2EL0cWKA9yGuuD+H+ety+ieWzHjxDY6BzQCIcWAIsilUWSHLUD6ihBeqXJBYKHuWv+n56kVdcazU1nMIOXooDG4bB+cxskEzWxLJcv03HPFInXObXiWg8UEKzraUSzJBmEGhGioCNIiR3wVsJuv1jxycpQSF/aSQEF/dBwWYH2u22exLqfsBHSV23L9KYldNB9ucdmLbm/vadoATW3g2sY2C4DPJDS7/eGrrrh8bgiMiCslBkpEtn5R5V2wsGyral0Vnnp8AoeL5jWGmF7+8hcrRPGWUk7Y3ZW4Wdt6Uwf/zTfmQJAdABNnsMcGZKBsEAPpe7B8fpF4c7vCspFfjBTFzWCX7GsCezrzXzko4AU6lhDvTvN1bPC0Qq3pfUma31leTTgDDswlgODiPANa1m3UgW2Je9YQmm5X9q7HHu/ZAwcaGcNMmsE53hl3vHGz2BTzspOAm2ezK9RucO3Pz+IYie+9ZApaw1d2HrH7REyMLqre3V1Yk00+Y/9O27hiHqkSV7r1DIxoe/BaKG40oS9EKMsdy6JclTYAcCkGXiNKsEAS5TnlLJJPJlEmlnfF+obmloB/hZSBMTy+pV1p7tXXHh/i4H1Uov6Re5Yi7TXngiFc64tWOdHO7S9EanbE5PXfRmmPGy2zAR1DeSCeVMpNvFK4jiTzAiBOr2omgwrOC+u9lr00CreXvCNZP8UV9/tKUUByPBngSDcMwCMKARME0isLpJE4nOBqlW40ipEQC1RROToEqcDyqqFHlOdivP7akdi00J6CqKHidCfOFPYi0Z2BBfr0K1nHgrqDEWcYpFjsV5R7eib/mDr/j6/jDVZVP8f9Swe53I22nWmP9Xn1DwX4I9lDQL4ZiUxoMpiFJLqZRGF2MUjK5mBE8vsCzeBwNCU1G6TlbgT//AsNML1vWFQAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=6a8ea4191b84d710b2f70fa0604bcb61"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Close MSR when all follow ups">dfc7245997c8d71058a53566f053afe7</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>cde9d3d0-9141-4541-8bd2-553b32e9fd9a</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 09:29:45</sys_created_on>
+        <sys_id>6bc7645997c8d71058a53566f053afa2</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:59:11</sys_updated_on>
+        <ui_id>8f97c609-009d-4280-a81f-7e16d36155c9</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVTU/jMBD9K1HOpUqaUrW9ISqklfiQyooLC9bEmbQWjh1sp9Ct+t93krhtBIgFicOi7akznrHfe/ab3G5CkYXTcIhZFE/iEU/iJBlE0WA8jNNRksaDLAHEOOyFCgqkSoNcm4ziFciqTmw2ozgZDIeD0VFEtUfDFCdHAGP6F/HBaJwD5vGkP2/6tlvqzIQtJaxv/AaU4UshM4MqnN7e9cISDJ3l0ITTzYulj4KVkKKk0vkO7Uv0bl3WcaZ5VaByTOyS575z5leCHzNaoaYaThz1Qnx2qDIkIDlIi72wAJWB02YdTp2pKGEQsisl1/uKpVCuJVrAsxW/6eRhVNflSMy4F2EfMi9Qm85n4OCaduauMnu9tOBoW00yzKGS7rSbawuuSie0alscpHLXrWVVqMtWkXC/Qec+KksgsKx51shbWvn1Uj/NdyDPhGok8RSl5iD3EThnRFq5Gs4mRImNxgWUpVALVhq9Ek0zQSn6C0lBP5f6ic60YqH6wGvcfVIV+meUnzXpGzCiJnFB21DzthfatT2VYO2BCmnIHqsaSUvMU2CNCo0ErHkJdTM3onQndNQKPfBtz9shPX7vhfHJ4UF19jxY4plZVRJdBQs0zFYs6gRlqY1jBh8rtO61Gy7awuC6LQzm+8LPmeQDFHYm+dk8jbcpeZ+8yp13e4PLdsG75PjLXDL+Ti7xNL69Tf5mjmjw7vjtvKTGD7ZjDPsgSgaV0wU4wRkJaBhwjqWD+katA4e/qihKsvqN3Hfi5P5JmwemNInVZk6kDHItiXdQlUGrhQ2WsMIgRVQBl9pi1rO6+UeCBt6Dgfdg4D3Yf23Cfxbn52bAB25qNwPOBMrMvnF1uwGABQnkkLVX+WII+MXgxi/uP5dfNgniUdT8vtE8+G++mnd/AFEo9m9GCgAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=6bc7645997c8d71058a53566f053afa2"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Close MSR when all follow ups">dfc7245997c8d71058a53566f053afe7</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 09:29:45</sys_created_on>
+        <sys_id>a3c7645997c8d71058a53566f053afa1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:29:45</sys_updated_on>
+        <ui_id>16937326-a01f-431c-80c7-c678e0bca5d4</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VXW2vbMBT+K8bPJthNmnZ9Gy2BQS/Q28vWCdmSEzFF9iQ5aRry33d0sWMSt0tYCi171LlI3znn+2T5+zJkJDwLT/NBHOPk+PQkjvv9OB4O+xlO0rQ/zNI4HaRhFAo8pRCpccopLGeYV2b9jJQo0RQLPKYSqQrFKC84L+aoKhHONCsERBOmSo4Xjz5pZCOChzL4WkdkE8aJpCI8+/4UhSWWcJymMjxbbrh2xctxSjmE3nvAG/j1omyWyPqc7bKdFlw7RyGJgRJHIX3WVBAKGHLMFY1CqJxgXchFY5EUkxvB14YJExp2DE3ws2IvcO5pbOJyClVl1PmaJfLNcub8Amt8p2WV6Ur60GxSsIwq1w9Cc1xxfd62uYCb0vbWpriyXXbBq6m4du0Imw3q2YClUgCClqZQg9yXkd9NivltjXLEhO2Jd/Iiw7xZYa0lSytt8CxDyukUNgKSlCUTY1TKYsZsMmCZ9sYcFr3cUIZQxcai52jTg77i3gjsF9b8iCUzVVzBNpAMgBgHhiA3QlVU0rZyhjJeKeuQWChPwVUUqoU651ipdeXQcvS7MrhdH3zFyDXNpGSSldpwdEZ9catoJ8kcx2vKZYUgzKBQLd1gu+mPCpIJTJf+BMrD2c6wXD6UUD0lKOlllTSOnvOvVttq+petDik7W3Mtu/N20V2N8ALcsl12beAFmBxMgFDHZ5KgGeuHU+D+mnIt+IuwspM3SXa85pMqpEauly1lbQtkb57vAKHm+Y1hZpAuXkPlaZ4zyknXd2ZkHBvfmaP/8zvzIUkOgAhy02OCM2EfDQD0vdgfv33FftngmaXXmvvWhlXW8ZEIdBG87K2EHeDUSriDs4N7h6cDYn3fW8ps3vW10QugfzAB9I8OI4BlU2bTyI6e1+9EM806/sXE4814oGArIVl1CWyvM5N9zzxabQu4v5eC22RznotXOHfgB+Urioze8wqYQKo/Dzn9ojkjY6rXp9dRpNBzzH91+T3jUD0oW947PE4Hb8p2mKwlCkpBkioYXvt1msDzaPsOSSJn3u8K2QFL3Y4r/BzcNmA6EfprBJROx3Y27XvkW2P1JB8c8MH4Yb+k9bA6NVjP7FP80x1OCE9/AJfeheDaEAAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=a3c7645997c8d71058a53566f053afa1"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=dfc7245997c8d71058a53566f053afe7"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=dfc7245997c8d71058a53566f053afe7^sys_idNOT IN63c7645997c8d71058a53566f053af9e,e68ea4191b84d710b2f70fa0604bcb74,e7c7645997c8d71058a53566f053af9a,e7c7645997c8d71058a53566f053af9f,ee8ea4191b84d710b2f70fa0604bcb72"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">87c7245997c8d71058a53566f053af8b</block>
+        <comment/>
+        <connected_to>904b1812-cdd4-4c7b-be7c-40d37db4231b</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Close MSR when all follow ups">dfc7245997c8d71058a53566f053afe7</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>7</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 09:29:45</sys_created_on>
+        <sys_id>63c7645997c8d71058a53566f053af9e</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 10:03:47</sys_updated_on>
+        <ui_id>322c028a-f20a-47eb-98a4-fdd112909a85</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">318e64191b84d710b2f70fa0604bcb24</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Close MSR when all follow ups">dfc7245997c8d71058a53566f053afe7</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>6</order>
+        <outputs_assigned/>
+        <parent_ui_id>cde9d3d0-9141-4541-8bd2-553b32e9fd9a</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 09:59:11</sys_created_on>
+        <sys_id>e68ea4191b84d710b2f70fa0604bcb74</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 10:03:47</sys_updated_on>
+        <ui_id>01ce3e69-e8a3-4710-93f5-c0489b0b2695</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">c3c7245997c8d71058a53566f053af5f</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Close MSR when all follow ups">dfc7245997c8d71058a53566f053afe7</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 09:29:45</sys_created_on>
+        <sys_id>e7c7645997c8d71058a53566f053af9a</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 10:03:47</sys_updated_on>
+        <ui_id>904b1812-cdd4-4c7b-be7c-40d37db4231b</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXW+bMBT9K5OfCTIQ8vVWpao0qVulterLVqGLMYk1YzNsJ82i/PddAyFRm2nrtse94WPf63OO7xF7op2tnTUP+soYsVJk8fkpIEJ5DL/3REHFyYIwrQphhVZZCwRkA9L5DfwshKkl7B5PCFsLWTS871ZDgzWWN2Sxf7ElCiwoKZTRnEUsiSdJTGk8G0f5JMmjuEiAQ4INJeRc4tHlkca72xYJfsrP7mqPG9sIterXt32X+yOom8KzimhA+LPlquDIpwRpeEAqUAVY3ewGpOFQ3Cl5AtZC2U5wBc9GfMcL4zT1B0uOElnvxrDMeqc6uLwGC0jFMeuawTgtGDedOQUvwUm7PMe6A3e1l9qVWMjlsVpLV6mPnSNkaHD2MM4gCV57pZ56r6O8X+vtpyPLG6FaV/pNqRnIYQUWvcud9Xz2hEteYaOsgrpGR7O60RvRFiOXKlxJXISl1Fu81E9XCMwTD9FYCG8Qv27hR2iEV/EB22BxRzMHI1jWTiK2Q5s4OQTE7MxSgjEnkehu9s15ip3kXlzW+eNLWCNqe4U3b3iv4xC8Huyzmd7vo8k8meI4joBG5WicRGw0o2w6YpPpjNOcQVqMw6V2yh4OXxylSUFfB+FP27wtPXNIyzSi6eX0jCeX0nMhN2+MTPyLyPj3+s3EUEr/R+avIyNM1g16r629/B8m5snHo7tz8JoJg9QePPb++MfwGzscLsHOoa1uvnpRJ+zwA9p2LaJ7BgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">4bc7245997c8d71058a53566f053af8d</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Close MSR when all follow ups">dfc7245997c8d71058a53566f053afe7</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>8</order>
+        <outputs_assigned/>
+        <parent_ui_id>322c028a-f20a-47eb-98a4-fdd112909a85</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 09:29:45</sys_created_on>
+        <sys_id>e7c7645997c8d71058a53566f053af9f</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 10:03:47</sys_updated_on>
+        <ui_id>1334d078-72aa-44bd-bf6c-41731ef091ef</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">f58e24191b84d710b2f70fa0604bcbfa</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Close MSR when all follow ups">dfc7245997c8d71058a53566f053afe7</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id>904b1812-cdd4-4c7b-be7c-40d37db4231b</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 09:59:11</sys_created_on>
+        <sys_id>ee8ea4191b84d710b2f70fa0604bcb72</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 10:03:47</sys_updated_on>
+        <ui_id>cde9d3d0-9141-4541-8bd2-553b32e9fd9a</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1V0W6bMBT9lcnPBBlIUJK3KlWlSd0qrVVftgpdjEmsGZthO2mG8u+7BkKiNtPWbY97s499r8853CNaop2tnTUP+soYsVZk+fkpIEJ5DNctUVBxsiRMq0JYoVXWAQHZgnT+AJeFMLWE/eMJYRshi4YP3WposMbyhizbF0eiwIKSQhktWMSSOE1iSuP5NMrTJI/iIgEOCTaUkHOJV1dHGu9uOyT4KT+7rz1ubCPUetjfDl3uj6BuCs8qogHhz5argiOfEqThAalAFWB1sx+RhkNxp+QJ2Ahle8EVPBvxHR+MZzN/seQokQ1ujNtscKqHy2uwgFQcs64ZjdOCcdObU/ASnLSrc6y/cFd7qX2JhVweq7V0lfrYO0LGBmcfxhkkwWuv1FMfdJT3G737dGR5I1TnynAoNQM57sCid7mznk9LuOQVNsoqqGt0NKsbvRVdMXKpwrXETVhKvcNH/XSFwDzxEI2F8Abx6w5+hEZ4FR+wDRb3NHMwgmXdJGI7tImTQ0DM3qwkGHMSie5m35yn2EsexGW9P76ENaK2V/jylg86DsHrwT6b6bZNoySeTuN0QnECJ9OcLyYAc1xRFqfzEjgObGgsWGcOhy+O0qSgr5Pwx33elp8FzMpZRGeX8zNNL+XnQnLeGJr4F6HxX+w3M0Mp/R+avw6NMFk/6oO27vF/mJknH5D+zdFrJgxSe/DY++M/wx/scbgEO4d2uvnqRZ2www8ZciDzfQYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=dfc7245997c8d71058a53566f053afe7"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=dfc7245997c8d71058a53566f053afe7"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_variable_dfc7245997c8d71058a53566f053afe7"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>changed_fields</element>
+        <help/>
+        <hint/>
+        <label>Changed Fields</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_dfc7245997c8d71058a53566f053afe7</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 09:29:45</sys_created_on>
+        <sys_id>17c7645997c8d71058a53566f053af75</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:29:45</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_dfc7245997c8d71058a53566f053afe7</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 09:29:45</sys_created_on>
+        <sys_id>63c7645997c8d71058a53566f053af8e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:29:45</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_dfc7245997c8d71058a53566f053afe7</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 09:29:45</sys_created_on>
+        <sys_id>dfc7645997c8d71058a53566f053af4e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:29:45</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_dfc7245997c8d71058a53566f053afe7"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_dfc7245997c8d71058a53566f053afe7"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>f5ba94599708d71058a53566f053af3c</sys_id>
+        <latest_snapshot>dfc7245997c8d71058a53566f053afe7</latest_snapshot>
+        <compiler_build>glide-australia-02-11-2026__patch5aw42-10-08-2026_10-13-2026_1247.zip</compiler_build>
+        <version_record/>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=f5ba94599708d71058a53566f053af3c^sys_idNOT INafc7645997c8d71058a53566f053afc0"/>
+    <sys_flow_trigger_plan action="INSERT_OR_UPDATE">
+        <binding_strategy>com.snc.process_flow.engine.binding.OncePerRecord</binding_strategy>
+        <plan>{"@class":"com.snc.process_flow.engine.serialization.plan_data.ChunkingPlanData","chunk_data":{"table":"sys_flow_trigger_plan","id":"afc7645997c8d71058a53566f053afc0","name":"plan","plan_signature":null},"plan_data":"CHUNKING_PLAN"}</plan>
+        <plan_id>f5ba94599708d71058a53566f053af3c</plan_id>
+        <snapshot>b2afa8111bc4d710b2f70fa0604bcb61</snapshot>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 09:29:45</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>afc7645997c8d71058a53566f053afc0</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 10:03:48</sys_updated_on>
+        <trigger display_value="">129fa4111bc4d710b2f70fa0604bcba7</trigger>
+    </sys_flow_trigger_plan>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=f5ba94599708d71058a53566f053af3c"/>
+</record_update>

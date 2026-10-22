@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_skill_metadata">
+    <sn_aia_skill_metadata action="INSERT_OR_UPDATE">
+        <description>Gives a people manager a prioritised team brief for this week: overdue and due-soon follow-up actions, manager support requests waiting for approval, upcoming birthdays and work anniversaries, missing HR information and journeys at risk. Use when a manager asks what to focus on, what is overdue, what needs their attention, or for a team brief or team summary. Also raises a manager support request (onboarding, offboarding, role change, learning plan, performance support) for a team member when the manager asks to raise, create or submit a request. Also handles any request to approve, reject, close, cancel or update a manager support request (MSR number such as MSR0001046) or its approval, and explains that this must be done by the approver.</description>
+        <document_id>5a81d10d9788171058a53566f053afea</document_id>
+        <document_table>sn_aia_agent</document_table>
+        <internal_name>global.x_snp_manager_su_0.Manager Team Brief Assistant</internal_name>
+        <name>Manager Team Brief Assistant</name>
+        <sys_class_name>sn_aia_skill_metadata</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-18 18:06:21</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>1174110997c8171058a53566f053af01</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Manager Team Brief Assistant</sys_name>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>sn_aia_skill_metadata_1174110997c8171058a53566f053af01</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 17:55:18</sys_updated_on>
+    </sn_aia_skill_metadata>
+</record_update>

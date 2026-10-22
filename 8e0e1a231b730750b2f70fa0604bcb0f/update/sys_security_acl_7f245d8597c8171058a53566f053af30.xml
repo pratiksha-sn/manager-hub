@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl">
+    <sys_security_acl action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <admin_overrides>true</admin_overrides>
+        <advanced>false</advanced>
+        <applies_to/>
+        <condition/>
+        <controlled_by_refs/>
+        <decision_type>allow</decision_type>
+        <description/>
+        <local_or_existing>Existing</local_or_existing>
+        <name>global.x_snp_manager_su_0.Manager Team Brief Assistant</name>
+        <operation display_value="execute">execute</operation>
+        <script/>
+        <security_attribute/>
+        <sys_class_name>sys_security_acl</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-18 18:05:10</sys_created_on>
+        <sys_id>7f245d8597c8171058a53566f053af30</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>global.x_snp_manager_su_0.Manager Team Brief Assistant</sys_name>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>sys_security_acl_7f245d8597c8171058a53566f053af30</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-18 18:05:10</sys_updated_on>
+        <type display_value="gen_ai_agent">fc55e9f79f8222109570e67e8a0a1c34</type>
+    </sys_security_acl>
+</record_update>

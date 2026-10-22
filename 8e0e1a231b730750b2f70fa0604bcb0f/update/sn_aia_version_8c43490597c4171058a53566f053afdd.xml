@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_version">
+    <sn_aia_version action="INSERT_OR_UPDATE">
+        <base_version/>
+        <change_description/>
+        <condition/>
+        <eval_score/>
+        <instructions>1. Ask Manager Team Brief to prepare the weekly brief for the logged-in manager using its read-only tools.
+2. Return the brief to the manager exactly as prepared: a prioritised list where every item starts with "AI suggestion:" and ends with the record number and link.
+3. Do not take any action on records. Approvals, updates and closures stay with the manager in the normal screens.</instructions>
+        <layer>overlay</layer>
+        <short_description/>
+        <snapshot/>
+        <state>published</state>
+        <sys_class_name>sn_aia_version</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-18 16:51:11</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>8c43490597c4171058a53566f053afdd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>V1</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>sn_aia_version_8c43490597c4171058a53566f053afdd</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-18 16:51:11</sys_updated_on>
+        <tags/>
+        <target_id>7f33490597c4171058a53566f053afda</target_id>
+        <target_table>sn_aia_usecase</target_table>
+        <version_name>V1</version_name>
+        <version_number>1</version_number>
+    </sn_aia_version>
+</record_update>

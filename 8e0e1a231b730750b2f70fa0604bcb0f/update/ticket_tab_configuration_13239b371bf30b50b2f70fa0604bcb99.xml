@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="ticket_tab_configuration">
+    <ticket_tab_configuration action="INSERT_OR_UPDATE">
+        <advanced>false</advanced>
+        <order>40</order>
+        <parent display_value="x_snp_manager_su_0_manager_support_request">90135b371bf30b50b2f70fa0604bcbe0</parent>
+        <script><![CDATA[/**
+ * The script should evaluate true/false or `answer` populated with true/false which validates if a tab is visible 
+ * The `current` object refers to the current Task(extension) record 
+ **/ 
+]]></script>
+        <sys_class_name>ticket_tab_configuration</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-15 06:07:48</sys_created_on>
+        <sys_id>13239b371bf30b50b2f70fa0604bcb99</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>ticket_tab_configuration_13239b371bf30b50b2f70fa0604bcb99</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 06:12:59</sys_updated_on>
+        <tab_name>Follow-up Actions</tab_name>
+        <table>x_snp_manager_su_0_manager_support_request</table>
+        <type>custom</type>
+        <visible table="x_snp_manager_su_0_manager_support_request">approval=approved^EQ<item display_value="Approved" endquery="false" field="approval" goto="false" newquery="false" operator="=" or="false" value="approved"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </visible>
+        <widget display_value="Manager Support – Follow-up Actions">dc0397371bf30b50b2f70fa0604bcb0c</widget>
+        <widget_param/>
+    </ticket_tab_configuration>
+    <sys_translated_text action="delete_multiple" query="documentkey=13239b371bf30b50b2f70fa0604bcb99"/>
+</record_update>

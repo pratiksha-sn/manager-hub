@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_tool">
+    <sn_aia_tool action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>Request Manager Support</description>
+        <input_schema>[]</input_schema>
+        <name>Request Manager Support</name>
+        <record_type>custom</record_type>
+        <script><![CDATA[undefined]]></script>
+        <sys_class_name>sn_aia_tool</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-18 19:20:58</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>c28565819780571058a53566f053afb5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Request Manager Support</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>sn_aia_tool_c28565819780571058a53566f053afb5</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-18 19:20:58</sys_updated_on>
+        <target_document>fb03c7671b7b0750b2f70fa0604bcb24</target_document>
+        <target_document_table>sc_cat_item</target_document_table>
+        <type>catalog</type>
+    </sn_aia_tool>
+</record_update>

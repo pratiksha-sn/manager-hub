@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_tool">
+    <sn_aia_tool action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>Generates a prioritised weekly brief for a people manager from their team data (follow-up actions, manager support requests, milestones, journeys). Each item is an AI suggestion with a reason, a next action and the source record. Runs when the manager clicks Generate team brief.
+</description>
+        <input_schema>[]</input_schema>
+        <name>Manager Team Brief</name>
+        <record_type>custom</record_type>
+        <script><![CDATA[undefined]]></script>
+        <sys_class_name>sn_aia_tool</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-18 18:04:12</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>69f3958597c8171058a53566f053af8d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Manager Team Brief</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>sn_aia_tool_69f3958597c8171058a53566f053af8d</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-18 18:04:12</sys_updated_on>
+        <target_document>4a6c49859748171058a53566f053af04</target_document>
+        <target_document_table>sn_nowassist_skill_config</target_document_table>
+        <type>capability</type>
+    </sn_aia_tool>
+</record_update>

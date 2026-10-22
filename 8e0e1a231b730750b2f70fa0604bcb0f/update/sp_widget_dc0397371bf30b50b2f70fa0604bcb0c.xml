@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function() {
+    var c = this;
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.msr-fua-empty {
+  padding: 16px 0;
+}
+.msr-fua-table {
+  margin-bottom: 0;
+}
+.msr-fua-table th {
+  font-weight: 600;
+  border-top: 0;
+}
+.msr-fua-state {
+  font-size: 12px;
+  padding: 2px 10px;
+  border-radius: 12px;
+  background: #e8f0fb;
+  color: #2a5ea8;
+  white-space: nowrap;
+}
+.msr-fua-state.is-closed {
+  background: #e7f5ec;
+  color: #23784a;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>mh-followup-actions</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Manager Support – Follow-up Actions</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    /* MSR Follow-up Actions - Standard Ticket tab for x_snp_manager_su_0_manager_support_request.
+     * Lists the follow-up actions of the request shown on the ticket page (read-only, ACLs apply). */
+    var REQUEST = 'x_snp_manager_su_0_manager_support_request';
+    var ACTION = 'x_snp_manager_su_0_follow_up_action';
+
+    var requestId = options.sys_id || $sp.getParameter('sys_id');
+    data.followups = [];
+    if (!requestId)
+        return;
+
+    var request = new GlideRecordSecure(REQUEST);
+    if (!request.get(requestId))
+        return;
+
+    var fua = new GlideRecordSecure(ACTION);
+    fua.addQuery('parent', requestId);
+    fua.orderBy('number');
+    fua.query();
+    while (fua.next()) {
+        data.followups.push({
+            number: fua.getValue('number'),
+            action: fua.getValue('short_description'),
+            assigned_to: fua.getDisplayValue('assigned_to'),
+            state: fua.getDisplayValue('state'),
+            active: fua.getValue('active') == '1',
+            // The number opens the follow-up action on the portal ticket page
+            link: '?id=ticket&table=' + ACTION + '&sys_id=' + fua.getUniqueValue()
+        });
+    }
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-15 06:06:59</sys_created_on>
+        <sys_id>dc0397371bf30b50b2f70fa0604bcb0c</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Manager Support – Follow-up Actions</sys_name>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>sp_widget_dc0397371bf30b50b2f70fa0604bcb0c</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 06:12:46</sys_updated_on>
+        <template><![CDATA[<div class="msr-fua">
+  <div class="msr-fua-empty text-muted" ng-if="!data.followups.length">
+    ${No follow-up actions yet. They are created when the request is approved.}
+  </div>
+
+  <table class="table msr-fua-table" ng-if="data.followups.length">
+    <thead>
+      <tr>
+        <th scope="col">${Number}</th>
+        <th scope="col">${Action}</th>
+        <th scope="col">${Assigned to}</th>
+        <th scope="col">${State}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="f in data.followups">
+        <td><a ng-href="{{f.link}}">{{f.number}}</a></td>
+        <td>{{f.action}}</td>
+        <td>{{f.assigned_to}}</td>
+        <td><span class="msr-fua-state" ng-class="{'is-closed': !f.active}">{{f.state}}</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

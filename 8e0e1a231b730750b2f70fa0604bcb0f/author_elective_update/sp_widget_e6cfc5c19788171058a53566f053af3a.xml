@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function() {
+    var c = this;
+
+    c.generateBrief = function() {
+        c.loading = true;
+        c.data.errorMessage = '';
+        c.server.get({ action: 'generateBrief' }).then(function(response) {
+            c.data.brief = response.data.brief;
+            c.data.errorMessage = response.data.errorMessage;
+            c.data.generatedOn = response.data.generatedOn;
+            c.loading = false;
+        }, function() {
+            c.data.errorMessage = 'The team brief could not be generated. Please try again later.';
+            c.loading = false;
+        });
+    };
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.team-brief-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.team-brief-loading {
+  margin-top: 8px;
+}
+.team-brief-text {
+  white-space: pre-wrap;
+  margin: 12px 0 8px;
+  line-height: 1.5;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description>Generate team brief button - runs the AI Skill Kit skill Manager Team Brief</description>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>x-snp-msh-team-brief</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Manager Team Brief</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    /* Manager Team Brief - runs the AI Skill Kit skill "Manager Team Brief" when the manager clicks the button.
+     * The skill itself collects the data (tool GetTeamData, runs as the logged-in user) and calls the LLM. */
+    var SKILL_CAPABILITY = '616cc5859748171058a53566f053affc';
+
+    data.canUse = gs.hasRole('x_snp_manager_su_0.manager') || gs.hasRole('sn_mh.manager_hub_user');
+
+    if (input && input.action === 'generateBrief' && data.canUse) {
+        var res = sn_one_extend.OneExtendUtil.execute({
+            mode: 'sync',
+            executionRequests: [{ capabilityId: SKILL_CAPABILITY, payload: {} }]
+        });
+        var skill = res && res.capabilities && res.capabilities[SKILL_CAPABILITY];
+        if (skill && skill.status === 'success' && skill.response)
+            data.brief = String(skill.response);
+        else
+            data.errorMessage = gs.getMessage('The team brief could not be generated. Please try again later.');
+        data.generatedOn = new GlideDateTime().getDisplayValue();
+    }
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-18 17:45:59</sys_created_on>
+        <sys_id>e6cfc5c19788171058a53566f053af3a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Manager Team Brief</sys_name>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>sp_widget_e6cfc5c19788171058a53566f053af3a</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-18 17:45:59</sys_updated_on>
+        <template><![CDATA[<div class="panel panel-default team-brief" ng-if="data.canUse">
+  <div class="panel-heading team-brief-heading">
+    <h2 class="panel-title">${Team brief}</h2>
+    <span class="label label-info">${AI generated}</span>
+  </div>
+  <div class="panel-body">
+    <p class="text-muted" ng-if="!c.data.brief && !c.loading">${Get a prioritised list of what needs your attention in your team this week.}</p>
+
+    <button class="btn btn-primary" ng-click="c.generateBrief()" ng-disabled="c.loading">
+      <span ng-if="!c.data.brief">${Generate team brief}</span>
+      <span ng-if="c.data.brief">${Regenerate}</span>
+    </button>
+    <p class="text-muted team-brief-loading" ng-if="c.loading" aria-live="polite">${Generating your team brief}...</p>
+
+    <div class="alert alert-danger" role="alert" ng-if="c.data.errorMessage">{{c.data.errorMessage}}</div>
+
+    <div ng-if="c.data.brief && !c.loading">
+      <div class="team-brief-text" ng-bind="c.data.brief"></div>
+      <p class="text-muted small">${AI suggestions based on your team data at} {{c.data.generatedOn}}. ${Review before you act.}</p>
+    </div>
+  </div>
+</div>
+]]></template>
+    </sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</application>
+        <file_path/>
+        <instance_id>c56f6cafebcb06d4cbbffceacad0cdc1</instance_id>
+        <instance_name>simplifynextpteltddemo2</instance_name>
+        <name>sp_widget_e6cfc5c19788171058a53566f053af3a</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[api.controller = function() {
+    var c = this;
+
+    c.generateBrief = function() {
+        c.loading = true;
+        c.data.errorMessage = '';
+        c.server.get({ action: 'generateBrief' }).then(function(response) {
+            c.data.brief = response.data.brief;
+            c.data.errorMessage = response.data.errorMessage;
+            c.data.generatedOn = response.data.generatedOn;
+            c.loading = false;
+        }, function() {
+            c.data.errorMessage = 'The team brief could not be generated. Please try again later.';
+            c.loading = false;
+        });
+    };
+};
+]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;.team-brief-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.team-brief-loading {
+  margin-top: 8px;
+}
+.team-brief-text {
+  white-space: pre-wrap;
+  margin: 12px 0 8px;
+  line-height: 1.5;
+}
+&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description&gt;Generate team brief button - runs the AI Skill Kit skill Manager Team Brief&lt;/description&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;false&lt;/has_preview&gt;&lt;id&gt;x-snp-msh-team-brief&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {  }]]&gt;&lt;/link&gt;&lt;name&gt;Manager Team Brief&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;false&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {
+    /* Manager Team Brief - runs the AI Skill Kit skill "Manager Team Brief" when the manager clicks the button.
+     * The skill itself collects the data (tool GetTeamData, runs as the logged-in user) and calls the LLM. */
+    var SKILL_CAPABILITY = '616cc5859748171058a53566f053affc';
+
+    data.canUse = gs.hasRole('x_snp_manager_su_0.manager') || gs.hasRole('sn_mh.manager_hub_user');
+
+    if (input &amp;&amp; input.action === 'generateBrief' &amp;&amp; data.canUse) {
+        var res = sn_one_extend.OneExtendUtil.execute({
+            mode: 'sync',
+            executionRequests: [{ capabilityId: SKILL_CAPABILITY, payload: {} }]
+        });
+        var skill = res &amp;&amp; res.capabilities &amp;&amp; res.capabilities[SKILL_CAPABILITY];
+        if (skill &amp;&amp; skill.status === 'success' &amp;&amp; skill.response)
+            data.brief = String(skill.response);
+        else
+            data.errorMessage = gs.getMessage('The team brief could not be generated. Please try again later.');
+        data.generatedOn = new GlideDateTime().getDisplayValue();
+    }
+})();
+]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;pratiksha.bhandavale&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-18 17:45:59&lt;/sys_created_on&gt;&lt;sys_id&gt;e6cfc5c19788171058a53566f053af3a&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;Manager Team Brief&lt;/sys_name&gt;&lt;sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0"&gt;8e0e1a231b730750b2f70fa0604bcb0f&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Manager Support Hub"&gt;8e0e1a231b730750b2f70fa0604bcb0f&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_e6cfc5c19788171058a53566f053af3a&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;pratiksha.bhandavale&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-18 17:45:59&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div class="panel panel-default team-brief" ng-if="data.canUse"&gt;
+  &lt;div class="panel-heading team-brief-heading"&gt;
+    &lt;h2 class="panel-title"&gt;${Team brief}&lt;/h2&gt;
+    &lt;span class="label label-info"&gt;${AI generated}&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="panel-body"&gt;
+    &lt;p class="text-muted" ng-if="!c.data.brief &amp;&amp; !c.loading"&gt;${Get a prioritised list of what needs your attention in your team this week.}&lt;/p&gt;
+
+    &lt;button class="btn btn-primary" ng-click="c.generateBrief()" ng-disabled="c.loading"&gt;
+      &lt;span ng-if="!c.data.brief"&gt;${Generate team brief}&lt;/span&gt;
+      &lt;span ng-if="c.data.brief"&gt;${Regenerate}&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;p class="text-muted team-brief-loading" ng-if="c.loading" aria-live="polite"&gt;${Generating your team brief}...&lt;/p&gt;
+
+    &lt;div class="alert alert-danger" role="alert" ng-if="c.data.errorMessage"&gt;{{c.data.errorMessage}}&lt;/div&gt;
+
+    &lt;div ng-if="c.data.brief &amp;&amp; !c.loading"&gt;
+      &lt;div class="team-brief-text" ng-bind="c.data.brief"&gt;&lt;/div&gt;
+      &lt;p class="text-muted small"&gt;${AI suggestions based on your team data at} {{c.data.generatedOn}}. ${Review before you act.}&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-644770291</payload_hash>
+        <record_name>Manager Team Brief</record_name>
+        <reverted_from/>
+        <source>cdced6e31b730750b2f70fa0604bcb01</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-18 17:45:59</sys_created_on>
+        <sys_id>e2cf89459788171058a53566f053af7a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a1501ed01a0000001</sys_recorded_at>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-18 17:45:59</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>6ecfc5c1f1881710ccf3069d332cd03f</update_guid>
+        <update_guid_history>6ecfc5c1f1881710ccf3069d332cd03f:-644770291</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Manager Team Brief">5ad019499788171058a53566f053afba</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-18 17:50:36</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>b3248d03ea9148009ba87c16fe56d189</sys_id>
+        <sys_metadata>e6cfc5c19788171058a53566f053af3a</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Manager Team Brief</sys_name>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_scope_delete display_value="">25f8c3211216469491c7eb05de329da9</sys_scope_delete>
+        <sys_update_name>sp_widget_e6cfc5c19788171058a53566f053af3a</sys_update_name>
+        <sys_update_version display_value="sp_widget_e6cfc5c19788171058a53566f053af3a">e2cf89459788171058a53566f053af7a</sys_update_version>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-18 17:50:36</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="one_api_service_plan">
+    <one_api_service_plan action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <input_processor/>
+        <name>___$y$t3m_bu1163r___-ec5f36323b3afa50037bf3cc73e45a2d, 4c22a0cb3b8b3ed0037bf3cc73e45ace, 0fce28e9cfab3650d1f3f5d50d851cd1-default</name>
+        <output_processor display_value="OneExtendOutputProcessor">250bd34353111110c271ddeeff7b12da</output_processor>
+        <sys_class_name>one_api_service_plan</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-18 16:56:26</sys_created_on>
+        <sys_id>3474c5c997c4171058a53566f053af59</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>___$y$t3m_bu1163r___-ec5f36323b3afa50037bf3cc73e45a2d, 4c22a0cb3b8b3ed0037bf3cc73e45ace, 0fce28e9cfab3650d1f3f5d50d851cd1-default</sys_name>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>one_api_service_plan_3474c5c997c4171058a53566f053af59</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-18 16:56:26</sys_updated_on>
+        <timeout_ms>60000</timeout_ms>
+    </one_api_service_plan>
+</record_update>

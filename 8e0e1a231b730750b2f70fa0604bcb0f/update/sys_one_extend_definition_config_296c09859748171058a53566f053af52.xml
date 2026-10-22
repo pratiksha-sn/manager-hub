@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_one_extend_definition_config">
+    <sys_one_extend_definition_config action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <capability display_value="Manager Team Brief">616cc5859748171058a53566f053affc</capability>
+        <default>false</default>
+        <definition display_value="Manager Team Brief (Google Gemini - Chat Completions)">2d6c09859748171058a53566f053af4d</definition>
+        <enable_large_input_support>false</enable_large_input_support>
+        <sys_class_name>sys_one_extend_definition_config</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-18 17:31:09</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>296c09859748171058a53566f053af52</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>sys_one_extend_definition_config_296c09859748171058a53566f053af52</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-18 18:44:30</sys_updated_on>
+    </sys_one_extend_definition_config>
+</record_update>

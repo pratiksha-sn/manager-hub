@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function fuaTodoController($scope, spUtil, i18n) {
+	/* Based on OOB "HRJ Task Mark When Complete" controller: actions go to the server with c.server.update() */
+	var c = this;
+	c.completionNotes = c.data.task ? c.data.task.completion_notes : '';
+	c.workNote = '';
+	c.updating = false;
+
+	c.setTaskInProgress = function() {
+		submit('setTaskInProgress', i18n.getMessage('Task started'));
+	};
+
+	c.addWorkNote = function() {
+		submit('addWorkNote', i18n.getMessage('Work note added'));
+	};
+
+	c.setTaskFinished = function() {
+		submit('setTaskFinished', i18n.getMessage('Task completed'));
+	};
+
+	function submit(action, successMessage) {
+		c.updating = true;
+		c.data.action = action;
+		c.data.completion_notes = c.completionNotes;
+		c.data.work_note = c.workNote;
+		c.server.update().then(function() {
+			c.updating = false;
+			c.data.action = '';
+			if (!c.data.errorMessage) {
+				c.workNote = '';
+				c.completionNotes = c.data.task.completion_notes;
+				spUtil.addInfoMessage(successMessage);
+			}
+		});
+	}
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.task-activity { padding: 16px; margin-bottom: 16px; }
+.fua-details { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px 24px; margin: 0; }
+.fua-details dt { font-weight: normal; color: #5a6270; font-size: 12px; }
+.fua-details dd { margin: 2px 0 0; }
+.fua-actions { display: flex; gap: 8px; justify-content: flex-end; flex-wrap: wrap; }
+.fua-post { margin-top: 8px; }
+.fua-required { color: #c83c36; }
+.fua-notes { white-space: pre-wrap; margin: 4px 0 0; }
+.fua-journal { list-style: none; padding: 0; margin: 8px 0 0; }
+.fua-journal li { border-top: 1px solid #e3e6ea; padding: 8px 0; }
+.fua-journal-meta { font-size: 12px; color: #5a6270; }
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>x-snp-msh-fua-todo</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Manager Support – Follow-up Action To-do</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	/*
+	 * Follow-up Action to-do (My tasks) - based on the OOB widget "HRJ Task Mark When Complete"
+	 * (hrj-task-mark-when-complete). Same structure: resolve sys_id, handle input.action,
+	 * build data.task, then data.caption / data.completed_by for the not-assigned and finished views.
+	 * Changed for Follow-up Action: hr_TaskTicket is HR-Task only, so the record is read here with
+	 * GlideRecordSecure (ACLs decide visibility) and updated only by its assignee. Extra fields:
+	 * Action type, Due date, Request, Employee, Completion notes and Work notes.
+	 */
+	var TABLE = 'x_snp_manager_su_0_follow_up_action';
+	var STATE_OPEN = '1', STATE_WORK_IN_PROGRESS = '2', STATE_CLOSED_COMPLETE = '3';
+
+	data.user_id = gs.getUserID();
+	data.isMobile = gs.isMobile();
+
+	if (input && input.sys_id)
+		data.sys_id = input.sys_id;
+	else if (options && (options.sys_id || options.sysId))
+		data.sys_id = options.sys_id || options.sysId;
+	else
+		data.sys_id = $sp.getValue("sys_id");
+	if (!data.sys_id)
+		return;
+
+	var taskGr = new GlideRecordSecure(TABLE);
+	if (!taskGr.get(data.sys_id))
+		return;
+
+	var assignedToMe = taskGr.getValue('assigned_to') == data.user_id;
+
+	// Same action names as the HR Task widget. Like hr_TaskTicket.setTaskFinished(), the update runs
+	// server-side after checking the user is the assignee: task.state and task.work_notes are
+	// write-protected for itil/task_editor, which managers do not have.
+	if (input && input.action && assignedToMe && taskGr.getValue('active') == '1') {
+		var completionNotes = (input.completion_notes || '').trim();
+		var workNote = (input.work_note || '').trim();
+		var updateGr = new GlideRecord(TABLE);
+		updateGr.get(data.sys_id);
+
+		if (input.action === 'setTaskInProgress' && updateGr.getValue('state') == STATE_OPEN)
+			updateGr.setValue('state', STATE_WORK_IN_PROGRESS);
+
+		if (input.action === 'addWorkNote' && !workNote)
+			data.errorMessage = gs.getMessage('Enter a work note to post.');
+
+		if (input.action === 'setTaskFinished') {
+			if (!completionNotes)
+				data.errorMessage = gs.getMessage('Completion notes are required to complete the task.');
+			else
+				updateGr.setValue('state', STATE_CLOSED_COMPLETE);
+		}
+
+		if (!data.errorMessage) {
+			if (completionNotes)
+				updateGr.setValue('completion_notes', completionNotes);
+			if (workNote)
+				updateGr.work_notes = workNote;
+			updateGr.update();
+		}
+		taskGr.get(data.sys_id);
+	}
+
+	data.task = getTask(taskGr);
+	if (Object.keys(data.task).length == 0)
+		return;
+
+	if (!data.task.assigned_or_delegated) {
+		if (data.task.finished)
+			data.completed_by = data.task.assigned_to.name;
+		else {
+			if (gs.nil(data.task.assigned_to.userId))
+				data.caption = gs.getMessage("Task is unassigned");
+			else
+				data.caption = gs.getMessage("Task assigned to {0}", data.task.assigned_to.name);
+		}
+	}
+
+	/*
+	 * Same shape as hr_TaskTicket.getTasks() returns for an HR Task, plus the Follow-up Action fields
+	 */
+	function getTask(gr) {
+		var request = new GlideRecordSecure('x_snp_manager_su_0_manager_support_request');
+		var hasRequest = request.get(gr.getValue('parent'));
+		return {
+			sys_id: gr.getUniqueValue(),
+			number: gr.getValue('number'),
+			short_description: gr.getValue('short_description'),
+			description: gr.getValue('description'),
+			state: gr.getValue('state'),
+			stateLabel: gr.getDisplayValue('state'),
+			created: gr.getDisplayValue('sys_created_on'),
+			closed_at: gr.getDisplayValue('closed_at'),
+			finished: gr.getValue('active') != '1',
+			assigned_to: {
+				userId: gr.getValue('assigned_to'),
+				name: gr.getDisplayValue('assigned_to')
+			},
+			assigned_or_delegated: assignedToMe,
+			// Follow-up Action fields
+			action_type: gr.getDisplayValue('action_type'),
+			due_date: gr.getDisplayValue('due_date'),
+			completion_notes: gr.getValue('completion_notes') || '',
+			request_number: hasRequest ? request.getValue('number') : '',
+			request_summary: hasRequest ? request.getValue('short_description') : '',
+			employee: hasRequest ? request.getDisplayValue('subject_person') : '',
+			work_notes: getWorkNotes(gr.getUniqueValue())
+		};
+	}
+
+	function getWorkNotes(sysId) {
+		var notes = [];
+		var journal = new GlideRecord('sys_journal_field');
+		journal.addQuery('name', TABLE);
+		journal.addQuery('element_id', sysId);
+		journal.addQuery('element', 'work_notes');
+		journal.orderByDesc('sys_created_on');
+		journal.setLimit(20);
+		journal.query();
+		var names = {};
+		while (journal.next())
+			notes.push({
+				value: journal.getValue('value'),
+				created_by: getUserName(journal.getValue('sys_created_by'), names),
+				created_on: journal.getDisplayValue('sys_created_on')
+			});
+		return notes;
+	}
+
+	// sys_created_by holds the user ID (login); show the person's name like the activity stream does
+	function getUserName(userName, cache) {
+		if (!cache[userName]) {
+			var user = new GlideRecord('sys_user');
+			cache[userName] = user.get('user_name', userName) ? user.getDisplayValue('name') : userName;
+		}
+		return cache[userName];
+	}
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-18 15:19:06</sys_created_on>
+        <sys_id>9b2eac8d1b4cd310b2f70fa0604bcb7c</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Manager Support – Follow-up Action To-do</sys_name>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>sp_widget_9b2eac8d1b4cd310b2f70fa0604bcb7c</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-18 16:04:41</sys_updated_on>
+        <template><![CDATA[<!-- Based on OOB "HRJ Task Mark When Complete"; same blocks, Follow-up Action fields added -->
+<p ng-if="data.task.description">{{data.task.description}}</p>
+
+<!-- Follow-up Action details -->
+<div class="panel panel-{{::options.color}} b task-activity">
+  <dl class="fua-details">
+    <div><dt>${Action type}</dt><dd>{{data.task.action_type}}</dd></div>
+    <div><dt>${State}</dt><dd>{{data.task.stateLabel}}</dd></div>
+    <div><dt>${Due date}</dt><dd>{{data.task.due_date}}</dd></div>
+    <div><dt>${Request}</dt><dd>{{data.task.request_number}} - {{data.task.request_summary}}</dd></div>
+    <div><dt>${Employee}</dt><dd>{{data.task.employee}}</dd></div>
+  </dl>
+</div>
+
+<!-- Assigned to me and not finished (same condition as the HR Task widget) -->
+<div class="panel panel-{{::options.color}} b task-activity" ng-if="data.task.assigned_or_delegated && !data.task.finished">
+  <div id="task_link">
+    <p class="task-tagline" ng-if="data.task.state == '1'">${Click Start when you begin the task, or add completion notes and click Complete}.</p>
+    <p class="task-tagline" ng-if="data.task.state != '1'">${Add completion notes and click on the Complete button to mark task as complete}.</p>
+  </div>
+
+  <div class="form-group">
+    <label for="fua_completion_notes"><span class="fua-required" aria-hidden="true">*</span> ${Completion notes}</label>
+    <textarea id="fua_completion_notes" class="form-control" rows="3" ng-model="c.completionNotes" aria-required="true"></textarea>
+    <p class="help-block">${Required to complete the task}</p>
+  </div>
+  <div class="form-group">
+    <label for="fua_work_note">${Work notes}</label>
+    <textarea id="fua_work_note" class="form-control" rows="2" ng-model="c.workNote"></textarea>
+    <div class="fua-actions fua-post">
+      <button class="btn btn-default" ng-disabled="c.updating || !c.workNote" ng-click="c.addWorkNote()">${Post}</button>
+    </div>
+  </div>
+
+  <div class="alert alert-danger" role="alert" ng-if="data.errorMessage">{{data.errorMessage}}</div>
+
+  <div class="fua-actions">
+    <button class="btn btn-default" ng-if="data.task.state == '1'" ng-disabled="c.updating" ng-click="c.setTaskInProgress()">${Start}</button>
+    <button class="btn btn-primary" ng-disabled="c.updating || !c.completionNotes.trim()" ng-click="c.setTaskFinished()">${Complete}</button>
+  </div>
+  <p ng-if="c.updating" class="text-muted">${Updating}...</p>
+</div>
+
+<!-- Not assigned to me (same as HR Task: caption + created) -->
+<div ng-if="!data.task.assigned_or_delegated && !data.task.finished">
+  <p class="task-tagline">{{data.caption}}</p>
+  <p class="text-muted">${Created} {{::data.task.created}}</p>
+</div>
+
+<!-- Finished (same as HR Task: status + completed by + closed at) -->
+<div ng-if="data.task.finished">
+  <p class="task-tagline">{{data.task.stateLabel}} <span ng-if="data.completed_by">${by} {{data.completed_by}}</span> <span ng-if="data.task.closed_at">{{::data.task.closed_at}}</span></p>
+  <div ng-if="data.task.completion_notes">
+    <label>${Completion notes}</label>
+    <p class="fua-notes">{{data.task.completion_notes}}</p>
+  </div>
+</div>
+
+<!-- Work notes history -->
+<div class="panel panel-{{::options.color}} b task-activity" ng-if="data.task.work_notes.length">
+  <label>${Work notes}</label>
+  <ul class="fua-journal">
+    <li ng-repeat="note in data.task.work_notes">
+      <div class="fua-journal-meta">{{note.created_by}} - {{note.created_on}}</div>
+      <div class="fua-notes" ng-bind="note.value"></div>
+    </li>
+  </ul>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

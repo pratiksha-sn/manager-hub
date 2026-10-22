@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_email">
+    <sys_script_email action="INSERT_OR_UPDATE">
+        <name>msr_summary</name>
+        <new_lines_to_html>false</new_lines_to_html>
+        <script><![CDATA[(function runMailScript(current, template, email, email_action, event) {
+
+    if (current.getTableName() == 'sysapproval_approver') {
+        var msrGr = new GlideRecord('x_snp_manager_su_0_manager_support_request');
+        if (msrGr.get(current.getValue('sysapproval')))
+            printDetails(msrGr);
+    } else {
+        printDetails(current);
+    }
+
+    function printDetails(msrGr) {
+        var rows = [
+            ['Request', msrGr.getValue('number') + ' - ' + msrGr.getValue('short_description')],
+            ['Requester', msrGr.opened_for.getDisplayValue()],
+            ['Employee', msrGr.subject_person.getDisplayValue()],
+            ['Request type', msrGr.request_type.getDisplayValue()],
+            ['Due date', msrGr.due_date.getDisplayValue()],
+            ['Days to due', msrGr.getValue('days_to_due')],
+            ['Approver', msrGr.opened_for.manager.getDisplayValue()],
+            ['HR team', msrGr.assignment_group.getDisplayValue()]
+        ];
+        template.print('<table cellpadding="4" style="border-collapse:collapse">');
+        rows.forEach(function(r) {
+            template.print('<tr><td style="color:#555"><b>' + r[0] + '</b></td><td>' + escapeHtml(r[1]) + '</td></tr>');
+        });
+        template.print('</table>');
+    }
+
+    // User-entered text must not inject HTML into the email
+    function escapeHtml(text) {
+        return String(text || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+})(current, template, email, email_action, event);
+]]></script>
+        <sys_class_name>sys_script_email</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-14 14:07:59</sys_created_on>
+        <sys_id>f167fb671b374750b2f70fa0604bcb16</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>msr_summary</sys_name>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>sys_script_email_f167fb671b374750b2f70fa0604bcb16</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-14 14:07:59</sys_updated_on>
+    </sys_script_email>
+</record_update>

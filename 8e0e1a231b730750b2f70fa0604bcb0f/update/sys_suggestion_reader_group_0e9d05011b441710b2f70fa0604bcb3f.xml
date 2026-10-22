@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_suggestion_reader_group">
+    <sys_suggestion_reader_group action="INSERT_OR_UPDATE">
+        <click_in_mode>true</click_in_mode>
+        <context_config_id/>
+        <limit>5</limit>
+        <order>200</order>
+        <section_header>Popular searches</section_header>
+        <suggestion_type>Popular Search Reader Group for ServiceNow Otto for Virtual Agent (default)</suggestion_type>
+        <sys_class_name>sys_suggestion_reader_group</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-18 17:36:23</sys_created_on>
+        <sys_id>0e9d05011b441710b2f70fa0604bcb3f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Popular Search Reader Group for ServiceNow Otto for Virtual Agent (default)</sys_name>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>sys_suggestion_reader_group_0e9d05011b441710b2f70fa0604bcb3f</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-18 17:36:23</sys_updated_on>
+    </sys_suggestion_reader_group>
+</record_update>

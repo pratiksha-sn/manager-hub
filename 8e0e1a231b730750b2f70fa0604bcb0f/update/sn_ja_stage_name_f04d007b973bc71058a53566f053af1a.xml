@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_ja_stage_name">
+    <sn_ja_stage_name action="INSERT_OR_UPDATE">
+        <created_by_owner>false</created_by_owner>
+        <sys_class_name>sn_ja_stage_name</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-14 15:42:57</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>f04d007b973bc71058a53566f053af1a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>First 30 days</sys_name>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>sn_ja_stage_name_f04d007b973bc71058a53566f053af1a</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-14 15:42:57</sys_updated_on>
+        <title>First 30 days</title>
+    </sn_ja_stage_name>
+</record_update>

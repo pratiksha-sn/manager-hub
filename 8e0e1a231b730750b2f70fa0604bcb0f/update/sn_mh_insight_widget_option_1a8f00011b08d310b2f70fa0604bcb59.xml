@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sn_mh_insight_widget_option">
+    <sn_mh_insight_widget_option action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <advanced>false</advanced>
+        <advanced_placeholder_dimensions>false</advanced_placeholder_dimensions>
+        <async_load>false</async_load>
+        <async_load_device_type>desktop,tablet,mobile</async_load_device_type>
+        <async_load_trigger>viewport</async_load_trigger>
+        <chart_height>400</chart_height>
+        <chart_layout>2</chart_layout>
+        <charts_config>[{"width":"50,50","height":400,"charts":""},{"width":"50,50","height":360,"charts":""}]</charts_config>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>2</order>
+        <pa_widgets/>
+        <placeholder_dimensions>{&#13;	"mobile": {&#13;		"height": "250px",&#13;		"width": "100%"&#13;	},&#13;	"desktop": {&#13;		"height": "250px",&#13;		"width": "100%"&#13;	},&#13;	"tablet": {&#13;		"height": "250px",&#13;		"width": "100%"&#13;	}&#13;}</placeholder_dimensions>
+        <placeholder_dimensions_script><![CDATA[function evaluateConfig(options) { return {	"mobile": {		"height": "250px",		"width": "100%"	},	"desktop": {		"height": "250px",		"width": "100%"	},	"tablet": {		"height": "250px",		"width": "100%"	}}; }]]></placeholder_dimensions_script>
+        <placeholder_template>&lt;!-- 
+	AngularJS template with configurable options.
+	Use the `options` object to control dynamic behavior.
+	Example: Display an element when max row count is 10:
+	&lt;div ng-if="options.maxRowCount === 10"&gt;&lt;/div&gt;
+	The `skeleton-container` class is used for loading placeholders.
+--&gt;
+	&lt;div class="skeleton-container"&gt;
+	&lt;!-- Header Skeleton --&gt;
+	&lt;div class="skeleton-box skeleton-header"&gt;&lt;/div&gt;
+	&lt;!-- Body Skeleton --&gt;
+	&lt;div class="skeleton-box skeleton-line"&gt;&lt;/div&gt;
+	&lt;div class="skeleton-box skeleton-line small"&gt;&lt;/div&gt;
+	&lt;div class="skeleton-box skeleton-line medium"&gt;&lt;/div&gt;
+&lt;/div&gt;</placeholder_template>
+        <preserve_placeholder_size>false</preserve_placeholder_size>
+        <reports>027f44891bc4d310b2f70fa0604bcb4d,da7fcccd1bc4d310b2f70fa0604bcbd8,967f00011b08d310b2f70fa0604bcb27,da7f00011b08d310b2f70fa0604bcb37</reports>
+        <roles/>
+        <section_title>Manager support</section_title>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">a42cca0deb475510ec17bed0595228af</sp_column>
+        <sp_widget display_value="Manager Hub Team Insight Section">327ac8a0eb221110226ed5c152522883</sp_widget>
+        <sys_class_name>sn_mh_insight_widget_option</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-18 13:05:15</sys_created_on>
+        <sys_id>1a8f00011b08d310b2f70fa0604bcb59</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Manager support</sys_name>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>sn_mh_insight_widget_option_1a8f00011b08d310b2f70fa0604bcb59</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-18 13:08:45</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters/>
+    </sn_mh_insight_widget_option>
+    <sys_translated_text action="delete_multiple" query="documentkey=1a8f00011b08d310b2f70fa0604bcb59"/>
+</record_update>

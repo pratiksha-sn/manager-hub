@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="ais_search_profile_ais_dictionary_m2m">
+    <ais_search_profile_ais_dictionary_m2m action="DELETE">
+        <dictionary display_value="default_synonym_dictionary">b29df374c7531010d1cfd9795cc260cd</dictionary>
+        <dictionary_reference_qualifier/>
+        <marked_for_deletion>false</marked_for_deletion>
+        <profile display_value="ServiceNow Otto for Virtual Agent (default) Primary">636dc9cd1b041710b2f70fa0604bcbe1</profile>
+        <sys_class_name>ais_search_profile_ais_dictionary_m2m</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-18 17:35:40</sys_created_on>
+        <sys_id>636dc9cd1b041710b2f70fa0604bcbe4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>default_synonym_dictionary.ServiceNow Otto for Virtual Agent (default) Primary</sys_name>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>ais_search_profile_ais_dictionary_m2m_636dc9cd1b041710b2f70fa0604bcbe4</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-18 17:35:40</sys_updated_on>
+    </ais_search_profile_ais_dictionary_m2m>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</application>
+        <file_path/>
+        <instance_id>c56f6cafebcb06d4cbbffceacad0cdc1</instance_id>
+        <instance_name>simplifynextpteltddemo2</instance_name>
+        <name>ais_search_profile_ais_dictionary_m2m_636dc9cd1b041710b2f70fa0604bcbe4</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="ais_search_profile_ais_dictionary_m2m"><ais_search_profile_ais_dictionary_m2m action="INSERT_OR_UPDATE"><dictionary display_value="default_synonym_dictionary">b29df374c7531010d1cfd9795cc260cd</dictionary><dictionary_reference_qualifier/><marked_for_deletion>false</marked_for_deletion><profile display_value="ServiceNow Otto for Virtual Agent (default) Primary">636dc9cd1b041710b2f70fa0604bcbe1</profile><sys_class_name>ais_search_profile_ais_dictionary_m2m</sys_class_name><sys_created_by>pratiksha.bhandavale</sys_created_by><sys_created_on>2026-10-18 17:35:40</sys_created_on><sys_id>636dc9cd1b041710b2f70fa0604bcbe4</sys_id><sys_mod_count>0</sys_mod_count><sys_name>default_synonym_dictionary.ServiceNow Otto for Virtual Agent (default) Primary</sys_name><sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package><sys_policy/><sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope><sys_update_name>ais_search_profile_ais_dictionary_m2m_636dc9cd1b041710b2f70fa0604bcbe4</sys_update_name><sys_updated_by>pratiksha.bhandavale</sys_updated_by><sys_updated_on>2026-10-18 17:35:40</sys_updated_on></ais_search_profile_ais_dictionary_m2m></record_update>]]></payload>
+        <payload_hash>-2012466034</payload_hash>
+        <record_name>default_synonym_dictionary.ServiceNow Otto for Virtual Agent (default) Primary</record_name>
+        <reverted_from/>
+        <source>0a0e1a231b730750b2f70fa0604bcb6d</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-18 17:35:40</sys_created_on>
+        <sys_id>ab6dc9cd1b041710b2f70fa0604bcbe9</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_recorded_at>1a150155faf0000001</sys_recorded_at>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-18 17:46:19</sys_updated_on>
+        <type>AI Search Search Profile Dictionary Mapp</type>
+        <update_guid>e76dc9cdd904171024badcf2735f70e8</update_guid>
+        <update_guid_history>e76dc9cdd904171024badcf2735f70e8:-2012466034</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="default_synonym_dictionary.ServiceNow Otto for Virtual Agent (default) Primary">3f6d0dcd1b041710b2f70fa0604bcb45</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-18 17:35:41</sys_created_on>
+        <sys_db_object display_value="" name="ais_search_profile_ais_dictionary_m2m">ais_search_profile_ais_dictionary_m2m</sys_db_object>
+        <sys_id>10ff76a749794e4e8193e45c6587bf24</sys_id>
+        <sys_metadata>636dc9cd1b041710b2f70fa0604bcbe4</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>default_synonym_dictionary.ServiceNow Otto for Virtual Agent (default) Primary</sys_name>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_scope_delete display_value="">25f8c3211216469491c7eb05de329da9</sys_scope_delete>
+        <sys_update_name>ais_search_profile_ais_dictionary_m2m_636dc9cd1b041710b2f70fa0604bcbe4</sys_update_name>
+        <sys_update_version display_value="ais_search_profile_ais_dictionary_m2m_636dc9cd1b041710b2f70fa0604bcbe4">ab6dc9cd1b041710b2f70fa0604bcbe9</sys_update_version>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-18 17:35:41</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

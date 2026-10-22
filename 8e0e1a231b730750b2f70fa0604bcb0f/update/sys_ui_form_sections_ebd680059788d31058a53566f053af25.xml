@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_form_sections form_id="ebd680059788d31058a53566f053af25" sys_domain="global" table="sn_mh_insight_widget_option" version="3">
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>0</position>
+            <sys_created_by>pratiksha.bhandavale</sys_created_by>
+            <sys_created_on>2026-10-18 12:27:23</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>a7d644059788d31058a53566f053afb5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="Default view" name="sn_mh_insight_widget_option" sys_domain="global" view="Default view">ebd680059788d31058a53566f053af25</sys_ui_form>
+            <sys_ui_section caption="NULL" display_value="" name="sn_mh_insight_widget_option" sys_domain="global" view="Default view">a7d644059788d31058a53566f053afab</sys_ui_section>
+            <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+            <sys_updated_on>2026-10-18 12:27:23</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>1</position>
+            <sys_created_by>pratiksha.bhandavale</sys_created_by>
+            <sys_created_on>2026-10-18 12:27:23</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>7bd644059788d31058a53566f053afec</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="Default view" name="sn_mh_insight_widget_option" sys_domain="global" view="Default view">ebd680059788d31058a53566f053af25</sys_ui_form>
+            <sys_ui_section caption="Color, Placement, Size" display_value="Color, Placement, Size" name="sn_mh_insight_widget_option" sys_domain="global" view="Default view">6fd644059788d31058a53566f053afb5</sys_ui_section>
+            <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+            <sys_updated_on>2026-10-18 12:27:23</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>2</position>
+            <sys_created_by>pratiksha.bhandavale</sys_created_by>
+            <sys_created_on>2026-10-18 12:27:22</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>e3d644059788d31058a53566f053afaa</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="Default view" name="sn_mh_insight_widget_option" sys_domain="global" view="Default view">ebd680059788d31058a53566f053af25</sys_ui_form>
+            <sys_ui_section caption="Widget" display_value="Widget" name="sn_mh_insight_widget_option" sys_domain="global" view="Default view">6bd644059788d31058a53566f053af94</sys_ui_section>
+            <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+            <sys_updated_on>2026-10-18 12:27:22</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form action="INSERT_OR_UPDATE">
+            <name>sn_mh_insight_widget_option</name>
+            <roles/>
+            <sys_class_name>sys_ui_form</sys_class_name>
+            <sys_created_by>pratiksha.bhandavale</sys_created_by>
+            <sys_created_on>2026-10-18 12:27:22</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>ebd680059788d31058a53566f053af25</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Default view</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+            <sys_update_name>sys_ui_form_sections_ebd680059788d31058a53566f053af25</sys_update_name>
+            <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+            <sys_updated_on>2026-10-18 12:27:22</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_form>
+    </sys_ui_form_sections>
+</record_update>

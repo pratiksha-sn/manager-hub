@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="0d1b6eef1bf30750b2f70fa0604bcb3e" extends="task" label="Follow Up Action" max_length="40" name="x_snp_manager_su_0_follow_up_action" type="collection">
+        <element label="Completion Notes" max_length="4000" name="completion_notes" type="string"/>
+        <element choice="1" label="Action Type" max_length="40" name="action_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Access setup" sequence="0" value="access_setup"/>
+                <element inactive_on_update="false" label="Equipment" sequence="1" value="equipment"/>
+                <element inactive_on_update="false" label="Check-in meeting" sequence="3" value="check_in_meeting"/>
+                <element inactive_on_update="false" label="Documentation" sequence="8" value="documentation"/>
+                <element inactive_on_update="false" label="Access change / revocation" sequence="6" value="access_change_revocation"/>
+                <element inactive_on_update="false" label="Training / learning" sequence="4" value="training_learning"/>
+                <element inactive_on_update="false" label="Orientation" sequence="2" value="orientation"/>
+                <element inactive_on_update="false" label="Exit interview" sequence="7" value="exit_interview"/>
+                <element inactive_on_update="false" label="Knowledge transfer" sequence="5" value="knowledge_transfer"/>
+                <element inactive_on_update="false" label="Other" sequence="9" value="other"/>
+            </choice>
+        </element>
+    </element>
+</database>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_snp_manager_su_0_manager_support_request</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Validate dates &amp; Days to Due</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/ ) {
+    var fields = MgrHubUtils.FIELDS;
+    var utils = new MgrHubUtils();
+
+   
+
+    // 2. Only re-validate when a date changed.
+    if (!current.isNewRecord() && !current[fields.DUE_DATE].changes() && !current[fields.REQUEST_DATE].changes())
+        return;
+
+    var check = utils.validateDates(current.getValue(fields.REQUEST_DATE), current.getValue(fields.DUE_DATE));
+    if (!check.valid) {
+        gs.addErrorMessage(gs.getMessage('Due Date ({0}) cannot be earlier than the Request Date ({1}).',
+            [current[fields.DUE_DATE].getDisplayValue(),
+             current[fields.REQUEST_DATE].getDisplayValue() || utils.today()]));
+        current.setAbortAction(true);
+        return;
+    }
+
+    // 3. Persist Days to Due
+    var days = utils.calcDaysToDue(current.getValue(fields.DUE_DATE));
+    current.setValue('days_to_due', days === null ? '' : days);
+})(current, previous);
+]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-14 09:20:51</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>85633a2f1b770750b2f70fa0604bcb9b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Validate dates &amp; Days to Due</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>sys_script_85633a2f1b770750b2f70fa0604bcb9b</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-14 09:20:51</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=85633a2f1b770750b2f70fa0604bcb9b"/>
+</record_update>

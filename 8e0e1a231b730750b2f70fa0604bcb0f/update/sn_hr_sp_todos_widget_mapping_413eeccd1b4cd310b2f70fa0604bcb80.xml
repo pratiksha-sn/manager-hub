@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_hr_sp_todos_widget_mapping">
+    <sn_hr_sp_todos_widget_mapping action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition/>
+        <now_assist_topic_block/>
+        <sys_class_name>sn_hr_sp_todos_widget_mapping</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-18 15:19:14</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>413eeccd1b4cd310b2f70fa0604bcb80</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>sn_hr_sp_todos_widget_mapping_413eeccd1b4cd310b2f70fa0604bcb80</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-18 15:19:14</sys_updated_on>
+        <table>x_snp_manager_su_0_follow_up_action</table>
+        <to_dos_configuration display_value="Manager Support – Follow-up Actions">800213bf1bb30b50b2f70fa0604bcbd8</to_dos_configuration>
+        <widget display_value="Manager Support – Follow-up Action To-do">9b2eac8d1b4cd310b2f70fa0604bcb7c</widget>
+    </sn_hr_sp_todos_widget_mapping>
+</record_update>

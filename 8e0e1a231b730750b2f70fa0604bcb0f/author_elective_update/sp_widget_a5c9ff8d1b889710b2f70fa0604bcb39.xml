@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function() {
+    var c = this;
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.msr-fua-empty {
+  padding: 16px 0;
+}
+.msr-fua-table {
+  margin-bottom: 0;
+}
+.msr-fua-table th {
+  font-weight: 600;
+  border-top: 0;
+}
+.msr-fua-state {
+  font-size: 12px;
+  padding: 2px 10px;
+  border-radius: 12px;
+  background: #e8f0fb;
+  color: #2a5ea8;
+  white-space: nowrap;
+}
+.msr-fua-state.is-closed {
+  background: #e7f5ec;
+  color: #23784a;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description>Standard Ticket tab: follow-up actions of the Manager Support Request (number links to the To-do)</description>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>x-snp-msh-msr-followups</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>MSR Follow-up Actions</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    /* MSR Follow-up Actions - Standard Ticket tab for x_snp_manager_su_0_manager_support_request.
+     * Lists the follow-up actions of the request shown on the ticket page (read-only, ACLs apply). */
+    var REQUEST = 'x_snp_manager_su_0_manager_support_request';
+    var ACTION = 'x_snp_manager_su_0_follow_up_action';
+    var TODO_PAGE = options.todo_page || 'hrm_todo';
+
+    var requestId = options.sys_id || $sp.getParameter('sys_id');
+    data.followups = [];
+    if (!requestId)
+        return;
+
+    var request = new GlideRecordSecure(REQUEST);
+    if (!request.get(requestId))
+        return;
+
+    var fua = new GlideRecordSecure(ACTION);
+    fua.addQuery('parent', requestId);
+    fua.orderBy('number');
+    fua.query();
+    while (fua.next()) {
+        data.followups.push({
+            number: fua.getValue('number'),
+            action: fua.getValue('short_description'),
+            assigned_to: fua.getDisplayValue('assigned_to'),
+            state: fua.getDisplayValue('state'),
+            active: fua.getValue('active') == '1',
+            // Opens the follow-up action in the To-dos view of the portal
+            link: '?id=' + TODO_PAGE + '&table=' + ACTION + '&sys_id=' + fua.getUniqueValue()
+        });
+    }
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 06:08:39</sys_created_on>
+        <sys_id>a5c9ff8d1b889710b2f70fa0604bcb39</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>MSR Follow-up Actions</sys_name>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>sp_widget_a5c9ff8d1b889710b2f70fa0604bcb39</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 06:08:39</sys_updated_on>
+        <template><![CDATA[<div class="msr-fua">
+  <div class="msr-fua-empty text-muted" ng-if="!data.followups.length">
+    ${No follow-up actions yet. They are created when the request is approved.}
+  </div>
+
+  <table class="table msr-fua-table" ng-if="data.followups.length">
+    <thead>
+      <tr>
+        <th scope="col">${Number}</th>
+        <th scope="col">${Action}</th>
+        <th scope="col">${Assigned to}</th>
+        <th scope="col">${State}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="f in data.followups">
+        <td><a ng-href="{{f.link}}">{{f.number}}</a></td>
+        <td>{{f.action}}</td>
+        <td>{{f.assigned_to}}</td>
+        <td><span class="msr-fua-state" ng-class="{'is-closed': !f.active}">{{f.state}}</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+]]></template>
+    </sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</application>
+        <file_path/>
+        <instance_id>c56f6cafebcb06d4cbbffceacad0cdc1</instance_id>
+        <instance_name>simplifynextpteltddemo2</instance_name>
+        <name>sp_widget_a5c9ff8d1b889710b2f70fa0604bcb39</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[api.controller = function() {
+    var c = this;
+};]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;.msr-fua-empty {
+  padding: 16px 0;
+}
+.msr-fua-table {
+  margin-bottom: 0;
+}
+.msr-fua-table th {
+  font-weight: 600;
+  border-top: 0;
+}
+.msr-fua-state {
+  font-size: 12px;
+  padding: 2px 10px;
+  border-radius: 12px;
+  background: #e8f0fb;
+  color: #2a5ea8;
+  white-space: nowrap;
+}
+.msr-fua-state.is-closed {
+  background: #e7f5ec;
+  color: #23784a;
+}
+&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description&gt;Standard Ticket tab: follow-up actions of the Manager Support Request (number links to the To-do)&lt;/description&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;false&lt;/has_preview&gt;&lt;id&gt;x-snp-msh-msr-followups&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {  }]]&gt;&lt;/link&gt;&lt;name&gt;MSR Follow-up Actions&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;false&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {
+    /* MSR Follow-up Actions - Standard Ticket tab for x_snp_manager_su_0_manager_support_request.
+     * Lists the follow-up actions of the request shown on the ticket page (read-only, ACLs apply). */
+    var REQUEST = 'x_snp_manager_su_0_manager_support_request';
+    var ACTION = 'x_snp_manager_su_0_follow_up_action';
+    var TODO_PAGE = options.todo_page || 'hrm_todo';
+
+    var requestId = options.sys_id || $sp.getParameter('sys_id');
+    data.followups = [];
+    if (!requestId)
+        return;
+
+    var request = new GlideRecordSecure(REQUEST);
+    if (!request.get(requestId))
+        return;
+
+    var fua = new GlideRecordSecure(ACTION);
+    fua.addQuery('parent', requestId);
+    fua.orderBy('number');
+    fua.query();
+    while (fua.next()) {
+        data.followups.push({
+            number: fua.getValue('number'),
+            action: fua.getValue('short_description'),
+            assigned_to: fua.getDisplayValue('assigned_to'),
+            state: fua.getDisplayValue('state'),
+            active: fua.getValue('active') == '1',
+            // Opens the follow-up action in the To-dos view of the portal
+            link: '?id=' + TODO_PAGE + '&amp;table=' + ACTION + '&amp;sys_id=' + fua.getUniqueValue()
+        });
+    }
+})();
+]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;pratiksha.bhandavale&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-19 06:08:39&lt;/sys_created_on&gt;&lt;sys_id&gt;a5c9ff8d1b889710b2f70fa0604bcb39&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;MSR Follow-up Actions&lt;/sys_name&gt;&lt;sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0"&gt;8e0e1a231b730750b2f70fa0604bcb0f&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Manager Support Hub"&gt;8e0e1a231b730750b2f70fa0604bcb0f&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_a5c9ff8d1b889710b2f70fa0604bcb39&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;pratiksha.bhandavale&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-19 06:08:39&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div class="msr-fua"&gt;
+  &lt;div class="msr-fua-empty text-muted" ng-if="!data.followups.length"&gt;
+    ${No follow-up actions yet. They are created when the request is approved.}
+  &lt;/div&gt;
+
+  &lt;table class="table msr-fua-table" ng-if="data.followups.length"&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th scope="col"&gt;${Number}&lt;/th&gt;
+        &lt;th scope="col"&gt;${Action}&lt;/th&gt;
+        &lt;th scope="col"&gt;${Assigned to}&lt;/th&gt;
+        &lt;th scope="col"&gt;${State}&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr ng-repeat="f in data.followups"&gt;
+        &lt;td&gt;&lt;a ng-href="{{f.link}}"&gt;{{f.number}}&lt;/a&gt;&lt;/td&gt;
+        &lt;td&gt;{{f.action}}&lt;/td&gt;
+        &lt;td&gt;{{f.assigned_to}}&lt;/td&gt;
+        &lt;td&gt;&lt;span class="msr-fua-state" ng-class="{'is-closed': !f.active}"&gt;{{f.state}}&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>722928185</payload_hash>
+        <record_name>MSR Follow-up Actions</record_name>
+        <reverted_from/>
+        <source>cdced6e31b730750b2f70fa0604bcb01</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 06:08:39</sys_created_on>
+        <sys_id>e9c9b3cd1b889710b2f70fa0604bcb8b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a152c6c08c0000001</sys_recorded_at>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 06:08:39</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>29c9b3cd268897105da23346100dc08a</update_guid>
+        <update_guid_history>29c9b3cd268897105da23346100dc08a:722928185</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="MSR Follow-up Actions">37f97b011bc89710b2f70fa0604bcb3e</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 06:09:38</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>316c698ece6d4d0b8cb7e9aa680b8d39</sys_id>
+        <sys_metadata>a5c9ff8d1b889710b2f70fa0604bcb39</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>MSR Follow-up Actions</sys_name>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_scope_delete display_value="">25f8c3211216469491c7eb05de329da9</sys_scope_delete>
+        <sys_update_name>sp_widget_a5c9ff8d1b889710b2f70fa0604bcb39</sys_update_name>
+        <sys_update_version display_value="sp_widget_a5c9ff8d1b889710b2f70fa0604bcb39">e9c9b3cd1b889710b2f70fa0604bcb8b</sys_update_version>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 06:09:38</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

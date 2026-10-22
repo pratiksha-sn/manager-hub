@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_jny_journey_config">
+    <sn_jny_journey_config action="DELETE">
+        <active>true</active>
+        <description>Onboarding journey for a new team member: welcome, setup and first-30-days activities with the manager and mentor.</description>
+        <heading_custom_title/>
+        <heading_has_custom_title>false</heading_has_custom_title>
+        <heading_title_fields>journey_config.name,employee</heading_title_fields>
+        <heading_title_icon>f53fadcaeff31a10fd795f02ed97d794</heading_title_icon>
+        <ja_plan_type display_value="Blank Plan Type">e2a62071c317c11052a7d1fc8840dde8</ja_plan_type>
+        <journey_mobile_image/>
+        <le_type/>
+        <locked_activity_sets/>
+        <manager_add_links>true</manager_add_links>
+        <manager_add_mentors>true</manager_add_mentors>
+        <manager_add_message>true</manager_add_message>
+        <manager_add_to_le_stages>false</manager_add_to_le_stages>
+        <manager_change_update>false</manager_change_update>
+        <manager_edit_journey>true</manager_edit_journey>
+        <manager_field>opened_for</manager_field>
+        <manager_field_table>sn_hr_core_case</manager_field_table>
+        <manager_message_template display_value="Blank">fda3ac32c393851052a7d1fc8840dd41</manager_message_template>
+        <manager_type>le_case_user</manager_type>
+        <mentor_add_links>true</mentor_add_links>
+        <mentor_add_mentors>true</mentor_add_mentors>
+        <mentor_add_message>true</mentor_add_message>
+        <mentor_edit_journey>true</mentor_edit_journey>
+        <mentor_message_template display_value="Blank">fda3ac32c393851052a7d1fc8840dd41</mentor_message_template>
+        <name>New joiner onboarding</name>
+        <sys_class_name>sn_jny_journey_config</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 16:10:42</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>74934ad91bc41b10b2f70fa0604bcb10</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>New joiner onboarding</sys_name>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>sn_jny_journey_config_74934ad91bc41b10b2f70fa0604bcb10</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 16:10:42</sys_updated_on>
+        <type display_value="Blank">3cb377e6c35f451052a7d1fc8840ddf4</type>
+        <use_as_template>true</use_as_template>
+    </sn_jny_journey_config>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</application>
+        <file_path/>
+        <instance_id>c56f6cafebcb06d4cbbffceacad0cdc1</instance_id>
+        <instance_name>simplifynextpteltddemo2</instance_name>
+        <name>sn_jny_journey_config_74934ad91bc41b10b2f70fa0604bcb10</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_jny_journey_config"><sn_jny_journey_config action="INSERT_OR_UPDATE"><active>true</active><description>Onboarding journey for a new team member: welcome, setup and first-30-days activities with the manager and mentor.</description><heading_custom_title/><heading_has_custom_title>false</heading_has_custom_title><heading_title_fields>journey_config.name,employee</heading_title_fields><heading_title_icon>f53fadcaeff31a10fd795f02ed97d794</heading_title_icon><ja_plan_type display_value="Blank Plan Type">e2a62071c317c11052a7d1fc8840dde8</ja_plan_type><journey_mobile_image/><le_type/><locked_activity_sets/><manager_add_links>true</manager_add_links><manager_add_mentors>true</manager_add_mentors><manager_add_message>true</manager_add_message><manager_add_to_le_stages>false</manager_add_to_le_stages><manager_change_update>false</manager_change_update><manager_edit_journey>true</manager_edit_journey><manager_field>opened_for</manager_field><manager_field_table>sn_hr_core_case</manager_field_table><manager_message_template display_value="Blank">fda3ac32c393851052a7d1fc8840dd41</manager_message_template><manager_type>le_case_user</manager_type><mentor_add_links>true</mentor_add_links><mentor_add_mentors>true</mentor_add_mentors><mentor_add_message>true</mentor_add_message><mentor_edit_journey>true</mentor_edit_journey><mentor_message_template display_value="Blank">fda3ac32c393851052a7d1fc8840dd41</mentor_message_template><name>New joiner onboarding</name><sys_class_name>sn_jny_journey_config</sys_class_name><sys_created_by>pratiksha.bhandavale</sys_created_by><sys_created_on>2026-10-19 16:10:42</sys_created_on><sys_domain>global</sys_domain><sys_id>74934ad91bc41b10b2f70fa0604bcb10</sys_id><sys_mod_count>0</sys_mod_count><sys_name>New joiner onboarding</sys_name><sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package><sys_policy/><sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope><sys_update_name>sn_jny_journey_config_74934ad91bc41b10b2f70fa0604bcb10</sys_update_name><sys_updated_by>pratiksha.bhandavale</sys_updated_by><sys_updated_on>2026-10-19 16:10:42</sys_updated_on><type display_value="Blank">3cb377e6c35f451052a7d1fc8840ddf4</type><use_as_template>true</use_as_template></sn_jny_journey_config></record_update>]]></payload>
+        <payload_hash>1272624779</payload_hash>
+        <record_name>New joiner onboarding</record_name>
+        <reverted_from/>
+        <source>cdced6e31b730750b2f70fa0604bcb01</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 16:10:42</sys_created_on>
+        <sys_id>f0930a5d1bc41b10b2f70fa0604bcb0d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a154edf21e0000001</sys_recorded_at>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 16:10:42</sys_updated_on>
+        <type>Journey Configuration</type>
+        <update_guid>70930a5d2cc41b10da5ef8e13a35880c</update_guid>
+        <update_guid_history>70930a5d2cc41b10da5ef8e13a35880c:1272624779</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="New joiner onboarding">660482111b081b10b2f70fa0604bcb04</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 16:12:45</sys_created_on>
+        <sys_db_object display_value="" name="sn_jny_journey_config">sn_jny_journey_config</sys_db_object>
+        <sys_id>4cf37454a5a94ad38a7978d3d126e9f1</sys_id>
+        <sys_metadata>74934ad91bc41b10b2f70fa0604bcb10</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>New joiner onboarding</sys_name>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_scope_delete display_value="">25f8c3211216469491c7eb05de329da9</sys_scope_delete>
+        <sys_update_name>sn_jny_journey_config_74934ad91bc41b10b2f70fa0604bcb10</sys_update_name>
+        <sys_update_version display_value="sn_jny_journey_config_74934ad91bc41b10b2f70fa0604bcb10">f0930a5d1bc41b10b2f70fa0604bcb0d</sys_update_version>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 16:12:45</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

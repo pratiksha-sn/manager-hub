@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="bb20a62b1b730750b2f70fa0604bcba6" extends="sn_hr_core_case" label="Manager Support Request" max_length="40" name="x_snp_manager_su_0_manager_support_request" type="collection">
+        <element label="Days to Due" max_length="40" name="days_to_due" read_only="true" read_only_option="display_read_only" type="integer"/>
+        <element choice="1" label="Request Type" mandatory="true" max_length="40" name="request_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Onboarding support" sequence="0" value="onboarding_support"/>
+                <element inactive_on_update="false" label="Leave / return-to-work" sequence="5" value="leave_return_to_work"/>
+                <element inactive_on_update="false" label="Offboarding support" sequence="2" value="offboarding_support"/>
+                <element inactive_on_update="false" label="Learning &amp; growth plan" sequence="3" value="learning_growth_plan"/>
+                <element inactive_on_update="false" label="Other" sequence="6" value="other"/>
+                <element inactive_on_update="false" label="Role change / transfer" sequence="1" value="role_change_transfer"/>
+                <element inactive_on_update="false" label="Performance support" sequence="4" value="performance_support"/>
+            </choice>
+        </element>
+    </element>
+</database>

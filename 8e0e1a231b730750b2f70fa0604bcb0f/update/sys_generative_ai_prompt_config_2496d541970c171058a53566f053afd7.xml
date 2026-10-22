@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_generative_ai_prompt_config">
+    <sys_generative_ai_prompt_config action="INSERT_OR_UPDATE">
+        <ai_config display_value="OneExtend Capability Definition: Manager Team Brief (Google Gemini - Chat Completions)">ac96d541970c171058a53566f053afd4</ai_config>
+        <definition display_value="Manager Team Brief (Google Gemini - Chat Completions)">2d6c09859748171058a53566f053af4d</definition>
+        <filter_properties>{}</filter_properties>
+        <filter_type>default</filter_type>
+        <is_default>true</is_default>
+        <order>0</order>
+        <sys_class_name>sys_generative_ai_prompt_config</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-18 18:15:36</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>2496d541970c171058a53566f053afd7</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>ac96d541970c171058a53566f053afd4</sys_name>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>sys_generative_ai_prompt_config_2496d541970c171058a53566f053afd7</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-18 18:17:25</sys_updated_on>
+    </sys_generative_ai_prompt_config>
+</record_update>

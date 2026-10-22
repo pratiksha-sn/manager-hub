@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>due_date</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Due Date and Request date Difference</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+    if (isLoading)
+        return;
+
+    if (!newValue) {
+        // Also runs when we clear an invalid date below – keep the error message visible.
+        g_form.clearValue('days_to_due');
+        return;
+    }
+    g_form.hideFieldMsg('due_date', true);
+
+    var ga = new GlideAjax('x_snp_manager_su_0.MgrHubAjax');
+    ga.addParam('sysparm_name', 'getDueInfo');
+    ga.addParam('sysparm_due_date', newValue);
+    ga.addParam('sysparm_opened_at', g_form.getValue('opened_at'));
+    ga.getXMLAnswer(function(answer) {
+        var info;
+        try {
+            info = JSON.parse(answer);
+        } catch (e) {
+            return; // the Business Rule still validates on save
+        }
+        if (!info.valid) {
+            g_form.clearValue('due_date');
+            g_form.showFieldMsg('due_date', getMessage('Due Date cannot be earlier than the Request Date.'), 'error');
+            return;
+        }
+        g_form.setValue('days_to_due', info.daysToDue);
+    });
+}
+]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-14 09:24:22</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>840672a71bb70750b2f70fa0604bcbd4</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Due Date and Request date Difference</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>sys_script_client_840672a71bb70750b2f70fa0604bcbd4</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-14 10:03:21</sys_updated_on>
+        <table>x_snp_manager_su_0_manager_support_request</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

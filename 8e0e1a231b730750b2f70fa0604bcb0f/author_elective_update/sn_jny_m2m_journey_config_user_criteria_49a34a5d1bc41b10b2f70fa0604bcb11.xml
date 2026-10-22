@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_jny_m2m_journey_config_user_criteria">
+    <sn_jny_m2m_journey_config_user_criteria action="DELETE">
+        <journey_config display_value="New joiner onboarding">74934ad91bc41b10b2f70fa0604bcb10</journey_config>
+        <sys_class_name>sn_jny_m2m_journey_config_user_criteria</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 16:11:00</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>49a34a5d1bc41b10b2f70fa0604bcb11</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>New joiner onboarding.Any User</sys_name>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>sn_jny_m2m_journey_config_user_criteria_49a34a5d1bc41b10b2f70fa0604bcb11</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 16:11:00</sys_updated_on>
+        <user_criteria display_value="Any User">fb1166d64fff0200086eeed18110c7ab</user_criteria>
+    </sn_jny_m2m_journey_config_user_criteria>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</application>
+        <file_path/>
+        <instance_id>c56f6cafebcb06d4cbbffceacad0cdc1</instance_id>
+        <instance_name>simplifynextpteltddemo2</instance_name>
+        <name>sn_jny_m2m_journey_config_user_criteria_49a34a5d1bc41b10b2f70fa0604bcb11</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_jny_m2m_journey_config_user_criteria"><sn_jny_m2m_journey_config_user_criteria action="INSERT_OR_UPDATE"><journey_config display_value="New joiner onboarding">74934ad91bc41b10b2f70fa0604bcb10</journey_config><sys_class_name>sn_jny_m2m_journey_config_user_criteria</sys_class_name><sys_created_by>pratiksha.bhandavale</sys_created_by><sys_created_on>2026-10-19 16:11:00</sys_created_on><sys_domain>global</sys_domain><sys_id>49a34a5d1bc41b10b2f70fa0604bcb11</sys_id><sys_mod_count>0</sys_mod_count><sys_name>New joiner onboarding.Any User</sys_name><sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package><sys_policy/><sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope><sys_update_name>sn_jny_m2m_journey_config_user_criteria_49a34a5d1bc41b10b2f70fa0604bcb11</sys_update_name><sys_updated_by>pratiksha.bhandavale</sys_updated_by><sys_updated_on>2026-10-19 16:11:00</sys_updated_on><user_criteria display_value="Any User">fb1166d64fff0200086eeed18110c7ab</user_criteria></sn_jny_m2m_journey_config_user_criteria></record_update>]]></payload>
+        <payload_hash>817221715</payload_hash>
+        <record_name>fb1166d64fff0200086eeed18110c7ab</record_name>
+        <reverted_from/>
+        <source>cdced6e31b730750b2f70fa0604bcb01</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 16:11:00</sys_created_on>
+        <sys_id>41a34a5d1bc41b10b2f70fa0604bcb17</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a154ee37bb0000001</sys_recorded_at>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 16:11:00</sys_updated_on>
+        <type>Available For</type>
+        <update_guid>8da34a5da4c41b106c7357504212c715</update_guid>
+        <update_guid_history>8da34a5da4c41b106c7357504212c715:817221715</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Any User">6a04c6dd1bc41b10b2f70fa0604bcbcb</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 16:12:44</sys_created_on>
+        <sys_db_object display_value="" name="sn_jny_m2m_journey_config_user_criteria">sn_jny_m2m_journey_config_user_criteria</sys_db_object>
+        <sys_id>20f83a90ddf14fec85bd034119a9d881</sys_id>
+        <sys_metadata>49a34a5d1bc41b10b2f70fa0604bcb11</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>New joiner onboarding.Any User</sys_name>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_scope_delete display_value="">25f8c3211216469491c7eb05de329da9</sys_scope_delete>
+        <sys_update_name>sn_jny_m2m_journey_config_user_criteria_49a34a5d1bc41b10b2f70fa0604bcb11</sys_update_name>
+        <sys_update_version display_value="sn_jny_m2m_journey_config_user_criteria_49a34a5d1bc41b10b2f70fa0604bcb11">41a34a5d1bc41b10b2f70fa0604bcb17</sys_update_version>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 16:12:44</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

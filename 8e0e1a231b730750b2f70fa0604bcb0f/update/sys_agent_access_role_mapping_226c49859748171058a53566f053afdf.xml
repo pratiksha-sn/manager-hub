@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_agent_access_role_mapping">
+    <sys_agent_access_role_mapping action="INSERT_OR_UPDATE">
+        <agent_access_config display_value="Manager Team Brief">666c49859748171058a53566f053af87</agent_access_config>
+        <role display_value="sn_mh.manager_hub_user" name="sn_mh.manager_hub_user">4cad1e38eb510110253f7994a2522818</role>
+        <sys_class_name>sys_agent_access_role_mapping</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-18 17:31:14</sys_created_on>
+        <sys_id>226c49859748171058a53566f053afdf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Manager Team Brief.sn_mh.manager_hub_user</sys_name>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>sys_agent_access_role_mapping_226c49859748171058a53566f053afdf</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-18 17:31:14</sys_updated_on>
+    </sys_agent_access_role_mapping>
+</record_update>

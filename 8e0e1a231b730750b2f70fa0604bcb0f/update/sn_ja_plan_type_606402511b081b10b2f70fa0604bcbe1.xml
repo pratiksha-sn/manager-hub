@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_ja_plan_type">
+    <sn_ja_plan_type action="INSERT_OR_UPDATE">
+        <sys_class_name>sn_ja_plan_type</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 16:14:14</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>606402511b081b10b2f70fa0604bcbe1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>New Joiner Onboarding Plan Type</sys_name>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>sn_ja_plan_type_606402511b081b10b2f70fa0604bcbe1</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 16:14:14</sys_updated_on>
+        <title>New Joiner Onboarding Plan Type</title>
+        <view_for_employee display_value="Default for employee">8469a86487432010b0fb0c0626cb0b15</view_for_employee>
+        <view_for_manager display_value="Default for plan creator">136be8a487432010b0fb0c0626cb0bfa</view_for_manager>
+        <view_for_mentor display_value="Default for mentor">866a20a487432010b0fb0c0626cb0b90</view_for_mentor>
+    </sn_ja_plan_type>
+</record_update>

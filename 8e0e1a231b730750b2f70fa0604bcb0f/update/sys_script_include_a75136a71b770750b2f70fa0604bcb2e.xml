@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snp_manager_su_0.MgrHubUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>MgrHubUtils</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[
+var MgrHubUtils = Class.create();
+
+MgrHubUtils.SCOPE = 'x_snp_manager_su_0';
+MgrHubUtils.TABLES = {
+    REQUEST: MgrHubUtils.SCOPE + '_manager_support_request',
+    ACTION: MgrHubUtils.SCOPE + '_follow_up_action',
+    TEMPLATE: MgrHubUtils.SCOPE + '_follow_up_template'
+};
+MgrHubUtils.FIELDS = {
+    REQUESTER: 'opened_for',
+    EMPLOYEE: 'subject_person',
+    REQUEST_DATE: 'opened_at',
+    DUE_DATE: 'due_date',
+    PARENT: 'parent'
+};
+MgrHubUtils.MS_PER_DAY = 24 * 60 * 60 * 1000;
+
+MgrHubUtils.prototype = {
+    initialize: function() {},
+
+    /** Today's date (yyyy-MM-dd) in the current user's time zone. */
+    today: function() {
+        return new GlideDateTime().getLocalDate().getValue();
+    },
+
+    /** Date/Time value (internal UTC 'yyyy-MM-dd HH:mm:ss') -> local calendar date 'yyyy-MM-dd'. */
+    localDate: function(dateTimeValue) {
+        if (!dateTimeValue)
+            return '';
+        return new GlideDateTime(dateTimeValue).getLocalDate().getValue();
+    },
+
+    /** Whole days between two calendar dates (yyyy-MM-dd); negative when toDate is earlier; null if either is empty. */
+    daysBetween: function(fromDate, toDate) {
+        if (!fromDate || !toDate)
+            return null;
+        var from = new GlideDateTime(fromDate + ' 00:00:00');
+        var to = new GlideDateTime(toDate + ' 00:00:00');
+        return Math.round((to.getNumericValue() - from.getNumericValue()) / MgrHubUtils.MS_PER_DAY);
+    },
+
+    /** Days from today until a Date/Time due date; negative = overdue, null = no due date. */
+    calcDaysToDue: function(dueDateTime) {
+        return this.daysBetween(this.today(), this.localDate(dueDateTime));
+    },
+
+    /**
+     * Due Date must not be on a calendar day before the Request Date (empty request date = today).
+     * @returns {{valid: boolean, leadDays: number|null}}
+     */
+    validateDates: function(requestDateTime, dueDateTime) {
+        var requestDay = this.localDate(requestDateTime) || this.today();
+        var lead = this.daysBetween(requestDay, this.localDate(dueDateTime));
+        return {
+            valid: lead === null || lead >= 0,
+            leadDays: lead
+        };
+    },
+
+    /**
+     * Open (active) follow-up action with the same request + action type + owner.
+     * @returns {GlideRecord|null}
+     */
+    findOpenDuplicateAction: function(requestId, actionType, ownerId, excludeSysId) {
+        var fua = new GlideRecord(MgrHubUtils.TABLES.ACTION);
+        fua.addActiveQuery();
+        fua.addQuery(MgrHubUtils.FIELDS.PARENT, requestId);
+        fua.addQuery('action_type', actionType);
+        fua.addQuery('assigned_to', ownerId || '');
+        if (excludeSysId)
+            fua.addQuery('sys_id', '!=', excludeSysId);
+        fua.setLimit(1);
+        fua.query();
+        return fua.next() ? fua : null;
+    },
+
+    /**
+     * Recalculate Days to Due on open requests (it changes daily without the record changing).
+     * Called by a daily scheduled job (Day 3). Skips business rules/audit: derived field only.
+     * @returns {number} records updated
+     */
+    refreshDaysToDue: function() {
+        var updated = 0;
+        var req = new GlideRecord(MgrHubUtils.TABLES.REQUEST);
+        req.addActiveQuery();
+        req.addNotNullQuery(MgrHubUtils.FIELDS.DUE_DATE);
+        req.query();
+        while (req.next()) {
+            var days = this.calcDaysToDue(req.getValue(MgrHubUtils.FIELDS.DUE_DATE));
+            if (String(days) === req.getValue('days_to_due'))
+                continue;
+            req.setValue('days_to_due', days);
+            req.setWorkflow(false);
+            req.autoSysFields(false);
+            req.update();
+            updated++;
+        }
+        return updated;
+    },
+
+    type: 'MgrHubUtils'
+};
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-14 09:07:40</sys_created_on>
+        <sys_id>a75136a71b770750b2f70fa0604bcb2e</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>MgrHubUtils</sys_name>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>sys_script_include_a75136a71b770750b2f70fa0604bcb2e</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 07:58:47</sys_updated_on>
+    </sys_script_include>
+</record_update>

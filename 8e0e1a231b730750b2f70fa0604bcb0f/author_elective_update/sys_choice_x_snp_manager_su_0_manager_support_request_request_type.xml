@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="request_type" table="x_snp_manager_su_0_manager_support_request" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>request_type</element>
+            <name>x_snp_manager_su_0_manager_support_request</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>pratiksha.bhandavale</sys_created_by>
+            <sys_created_on>2026-10-14 08:01:36</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>request_type</sys_name>
+            <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+            <sys_update_name>sys_choice_x_snp_manager_su_0_manager_support_request_request_type</sys_update_name>
+            <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+            <sys_updated_on>2026-10-14 08:01:36</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>request_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Onboarding support</label>
+            <language>en</language>
+            <name>x_snp_manager_su_0_manager_support_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>pratiksha.bhandavale</sys_created_by>
+            <sys_created_on>2026-10-14 08:01:36</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+            <sys_updated_on>2026-10-14 08:01:36</sys_updated_on>
+            <value>onboarding_support</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>request_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Role change / transfer</label>
+            <language>en</language>
+            <name>x_snp_manager_su_0_manager_support_request</name>
+            <sequence>1</sequence>
+            <synonyms/>
+            <sys_created_by>pratiksha.bhandavale</sys_created_by>
+            <sys_created_on>2026-10-14 08:01:36</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+            <sys_updated_on>2026-10-14 08:01:36</sys_updated_on>
+            <value>role_change_transfer</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>request_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Offboarding support</label>
+            <language>en</language>
+            <name>x_snp_manager_su_0_manager_support_request</name>
+            <sequence>2</sequence>
+            <synonyms/>
+            <sys_created_by>pratiksha.bhandavale</sys_created_by>
+            <sys_created_on>2026-10-14 08:01:36</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+            <sys_updated_on>2026-10-14 08:01:36</sys_updated_on>
+            <value>offboarding_support</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>request_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Learning &amp; growth plan</label>
+            <language>en</language>
+            <name>x_snp_manager_su_0_manager_support_request</name>
+            <sequence>3</sequence>
+            <synonyms/>
+            <sys_created_by>pratiksha.bhandavale</sys_created_by>
+            <sys_created_on>2026-10-14 08:01:36</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+            <sys_updated_on>2026-10-14 08:01:36</sys_updated_on>
+            <value>learning_growth_plan</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>request_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Performance support</label>
+            <language>en</language>
+            <name>x_snp_manager_su_0_manager_support_request</name>
+            <sequence>4</sequence>
+            <synonyms/>
+            <sys_created_by>pratiksha.bhandavale</sys_created_by>
+            <sys_created_on>2026-10-14 08:01:36</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+            <sys_updated_on>2026-10-14 08:01:36</sys_updated_on>
+            <value>performance_support</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>request_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Leave / return-to-work</label>
+            <language>en</language>
+            <name>x_snp_manager_su_0_manager_support_request</name>
+            <sequence>5</sequence>
+            <synonyms/>
+            <sys_created_by>pratiksha.bhandavale</sys_created_by>
+            <sys_created_on>2026-10-14 08:01:37</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+            <sys_updated_on>2026-10-14 08:01:37</sys_updated_on>
+            <value>leave_return_to_work</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>request_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Other</label>
+            <language>en</language>
+            <name>x_snp_manager_su_0_manager_support_request</name>
+            <sequence>6</sequence>
+            <synonyms/>
+            <sys_created_by>pratiksha.bhandavale</sys_created_by>
+            <sys_created_on>2026-10-14 08:01:37</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+            <sys_updated_on>2026-10-14 08:01:37</sys_updated_on>
+            <value>other</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>

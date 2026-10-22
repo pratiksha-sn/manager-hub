@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_tool">
+    <sn_aia_tool action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <description>Submits a Manager Support Request (MSR) for one of the manager's direct reports through the Request Manager Support record producer. Use ONLY after the manager has said Yes to the latest list of values. Returns the request number.</description>
+        <input_schema>[{"name":"team_member","description":"Full name of the direct report the request is for","mandatory":true},{"name":"request_type","description":"Request type label, e.g. Onboarding support, Offboarding support, Role change / transfer, Learning &amp; growth plan, Performance support, Leave / return-to-work, Other","mandatory":true},{"name":"due_date","description":"Due date as yyyy-MM-dd","mandatory":true},{"name":"summary","description":"Short summary of the request","mandatory":true}]</input_schema>
+        <name>Submit manager support request</name>
+        <record_type>custom</record_type>
+        <script><![CDATA[(function(inputs) {
+    /* AI agent tool "Submit manager support request" (Manager Team Brief Assistant).
+     * Submits the Request Manager Support record producer with the values the manager
+     * confirmed in chat, so the request goes through the same producer script, approval and flow as the portal.
+     * Runs as the logged-in manager. */
+    var PRODUCER = 'fb03c7671b7b0750b2f70fa0604bcb24';
+    var me = gs.getUserID();
+
+    // Team member: only the manager's own active direct reports (same rule as the producer's reference qualifier)
+    var member = new GlideRecord('sys_user');
+    member.addActiveQuery();
+    member.addQuery('manager', me);
+    member.addQuery('name', String(inputs.team_member || '').trim());
+    member.query();
+    if (!member.next())
+        return { status: 'error', message: 'Team member must be one of your own direct reports.' };
+
+    // Request type: accept the label ("Onboarding support") or the value ("onboarding_support")
+    var type = String(inputs.request_type || '').trim();
+    var choice = new GlideRecord('sys_choice');
+    choice.addQuery('name', 'x_snp_manager_su_0_manager_support_request');
+    choice.addQuery('element', 'request_type');
+    choice.addQuery('inactive', false);
+    choice.addQuery('label', type).addOrCondition('value', type);
+    choice.query();
+    if (!choice.next())
+        return { status: 'error', message: 'Unknown request type: ' + type };
+
+    // Due date: yyyy-MM-dd, or the manager's own date format
+    var due = String(inputs.due_date || '').trim();
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(due)) {
+        var gd = new GlideDate();
+        gd.setDisplayValue(due);
+        due = gd.getValue();
+    }
+    var summary = String(inputs.summary || '').trim();
+    if (!due || !summary)
+        return { status: 'error', message: 'Due date and Summary are required.' };
+
+    var result = new sn_sc.CartJS().submitProducer({
+        sysparm_id: PRODUCER,
+        variables: {
+            subject_person: member.getUniqueValue(),
+            request_type: choice.getValue('value'),
+            due_date: due,
+            short_description: summary
+        }
+    });
+    return { status: 'success', number: result.number, record_id: result.sys_id, table: result.table };
+})(inputs);]]></script>
+        <sys_class_name>sn_aia_tool</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-19 02:44:51</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>dc2b0f459708971058a53566f053afc2</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Submit manager support request</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>sn_aia_tool_dc2b0f459708971058a53566f053afc2</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-19 02:48:20</sys_updated_on>
+        <target_document/>
+        <target_document_table/>
+        <type>script</type>
+    </sn_aia_tool>
+</record_update>

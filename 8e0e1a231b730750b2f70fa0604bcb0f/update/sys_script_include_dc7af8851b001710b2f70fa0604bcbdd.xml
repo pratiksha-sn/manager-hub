@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_snp_manager_su_0.MgrHubAgentTools</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Read-only tools for the Manager Team Brief AI agent</description>
+        <mobile_callable>false</mobile_callable>
+        <name>MgrHubAgentTools</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[/**
+ * MgrHubAgentTools - read-only tools for the "Manager Team Brief" AI agent (AI Agent Studio).
+ */
+var MgrHubAgentTools = Class.create();
+MgrHubAgentTools.prototype = {
+    REQUEST: 'x_snp_manager_su_0_manager_support_request',
+    ACTION: 'x_snp_manager_su_0_follow_up_action',
+    MAX_ROWS: 50,
+
+    initialize: function() {
+        this.managerId = gs.getUserID();
+        this.today = new GlideDate();
+    },
+
+    /** Direct reports: name, title, local time zone, location */
+    getMyTeam: function() {
+        var team = [];
+        var user = new GlideRecordSecure('sys_user');
+        user.addActiveQuery();
+        user.addQuery('manager', this.managerId);
+        user.orderBy('name');
+        user.setLimit(this.MAX_ROWS);
+        user.query();
+        while (user.next()) {
+            team.push({
+                name: user.getDisplayValue('name'),
+                title: user.getValue('title') || '',
+                time_zone: user.getValue('time_zone') || '',
+                location: user.getDisplayValue('location') || '',
+                link: this._link('sys_user', user.getUniqueValue())
+            });
+        }
+        return { manager: gs.getUserDisplayName(), count: team.length, team: team };
+    },
+
+    /** The manager's open support requests with approval status */
+    getOpenRequests: function() {
+        var requests = [];
+        var req = new GlideRecordSecure(this.REQUEST);
+        req.addActiveQuery();
+        req.addQuery('opened_for', this.managerId);
+        req.orderBy('due_date');
+        req.setLimit(this.MAX_ROWS);
+        req.query();
+        while (req.next()) {
+            requests.push({
+                number: req.getValue('number'),
+                summary: req.getValue('short_description'),
+                employee: req.getDisplayValue('subject_person'),
+                request_type: req.getDisplayValue('request_type'),
+                state: req.getDisplayValue('state'),
+                approval: req.getDisplayValue('approval'),
+                due_date: req.getDisplayValue('due_date'),
+                days_to_due: req.getValue('days_to_due'),
+                link: this._link(this.REQUEST, req.getUniqueValue())
+            });
+        }
+        return { count: requests.length, requests: requests };
+    },
+
+    /** Open follow-ups on the manager's requests (or owned by the manager) that are overdue or due within `days` */
+    getFollowupsDue: function(days) {
+        days = this._int(days, 7, 1, 60);
+        var limit = new GlideDateTime();
+        limit.addDaysLocalTime(days);
+        var now = new GlideDateTime();
+        var items = [];
+        var fua = new GlideRecordSecure(this.ACTION);
+        fua.addActiveQuery();
+        var mine = fua.addQuery('parent.ref_' + this.REQUEST + '.opened_for', this.managerId);
+        mine.addOrCondition('assigned_to', this.managerId);
+        fua.addQuery('due_date', '<=', limit);
+        fua.orderBy('due_date');
+        fua.setLimit(this.MAX_ROWS);
+        fua.query();
+        while (fua.next()) {
+            var due = new GlideDateTime(fua.getValue('due_date'));
+            items.push({
+                number: fua.getValue('number'),
+                action: fua.getValue('short_description'),
+                action_type: fua.getDisplayValue('action_type'),
+                owner: fua.getDisplayValue('assigned_to'),
+                state: fua.getDisplayValue('state'),
+                due_date: fua.getDisplayValue('due_date'),
+                overdue: due.before(now),
+                request: fua.parent.getDisplayValue(),
+                link: this._link(this.ACTION, fua.getUniqueValue())
+            });
+        }
+        return { window_days: days, count: items.length, followups: items };
+    },
+
+    /** Birthdays and work anniversaries in the next `days`, recent / upcoming joiners, and missing dates */
+    getTeamMilestones: function(days) {
+        days = this._int(days, 30, 1, 90);
+        var out = { window_days: days, birthdays: [], anniversaries: [], joiners: [], missing_information: [] };
+        var profile = new GlideRecordSecure('sn_hr_core_profile');
+        profile.addQuery('user.manager', this.managerId);
+        profile.addQuery('user.active', true);
+        profile.setLimit(this.MAX_ROWS);
+        profile.query();
+        while (profile.next()) {
+            var name = profile.user.getDisplayValue();
+            var link = this._link('sn_hr_core_profile', profile.getUniqueValue());
+            var dob = profile.getValue('date_of_birth');
+            var start = profile.getValue('employment_start_date');
+
+            if (!dob)
+                out.missing_information.push({ employee: name, missing: 'Date of birth', link: link });
+            else {
+                var nextBirthday = this._nextOccurrence(dob);
+                if (nextBirthday.inDays <= days)
+                    out.birthdays.push({ employee: name, date: nextBirthday.label, in_days: nextBirthday.inDays, link: link });
+            }
+
+            if (!start)
+                out.missing_information.push({ employee: name, missing: 'Employment start date', link: link });
+            else {
+                var startDate = new GlideDate();
+                startDate.setValue(start);
+                var sinceStart = GlideDate.subtract(startDate, this.today).getDayPart();
+                if (startDate.after(this.today) || sinceStart <= 30)
+                    out.joiners.push({ employee: name, start_date: startDate.getDisplayValue(), upcoming: startDate.after(this.today), link: link });
+                else {
+                    var nextAnniversary = this._nextOccurrence(start);
+                    if (nextAnniversary.inDays <= days)
+                        out.anniversaries.push({
+                            employee: name, date: nextAnniversary.label, in_days: nextAnniversary.inDays,
+                            years: parseInt(nextAnniversary.year, 10) - parseInt(start.substring(0, 4), 10), link: link
+                        });
+                }
+            }
+        }
+        return out;
+    },
+
+    /** Active journeys for direct reports with activity progress */
+    getTeamJourneys: function() {
+        var journeys = [];
+        var jny = new GlideRecordSecure('sn_jny_journey');
+        jny.addQuery('employee.user.manager', this.managerId);
+        jny.addQuery('state', 'IN', 'draft,ready');
+        jny.setLimit(this.MAX_ROWS);
+        jny.query();
+        while (jny.next()) {
+            var item = {
+                number: jny.getValue('number'),
+                title: jny.getValue('title'),
+                employee: jny.employee.getDisplayValue(),
+                state: jny.getDisplayValue('state'),
+                start_on: jny.getDisplayValue('start_on'),
+                link: this._link('sn_jny_journey', jny.getUniqueValue())
+            };
+            var progress = new GlideRecord('sn_jny_journey_progress');
+            progress.addQuery('journey', jny.getUniqueValue());
+            progress.setLimit(1);
+            progress.query();
+            if (progress.next()) {
+                item.activities_total = parseInt(progress.getValue('total'), 10) || 0;
+                item.activities_complete = parseInt(progress.getValue('complete_count'), 10) || 0;
+                item.activities_overdue = parseInt(progress.getValue('overdue_count'), 10) || 0;
+                item.at_risk = item.activities_overdue > 0;
+            }
+            journeys.push(item);
+        }
+        return { count: journeys.length, journeys: journeys };
+    },
+
+    /* ---------- helpers ---------- */
+
+    // Next calendar occurrence (this year or next) of a yyyy-MM-dd date; returns day/month only (no birth year)
+    _nextOccurrence: function(value) {
+        var year = parseInt(this.today.getValue().substring(0, 4), 10);
+        var next = new GlideDate();
+        next.setValue(year + value.substring(4));
+        if (next.before(this.today)) {
+            year++;
+            next.setValue(year + value.substring(4));
+        }
+        return {
+            inDays: GlideDate.subtract(this.today, next).getDayPart(),
+            label: next.getByFormat('dd MMM'),
+            year: String(year)
+        };
+    },
+
+    _int: function(value, fallback, min, max) {
+        var n = parseInt(value, 10);
+        if (isNaN(n))
+            n = fallback;
+        return Math.min(Math.max(n, min), max);
+    },
+
+    _link: function(table, sysId) {
+        return gs.getProperty('glide.servlet.uri') + table + '.do?sys_id=' + sysId;
+    },
+
+    type: 'MgrHubAgentTools'
+};
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-18 16:12:43</sys_created_on>
+        <sys_id>dc7af8851b001710b2f70fa0604bcbdd</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>MgrHubAgentTools</sys_name>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>sys_script_include_dc7af8851b001710b2f70fa0604bcbdd</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-18 17:11:48</sys_updated_on>
+    </sys_script_include>
+</record_update>

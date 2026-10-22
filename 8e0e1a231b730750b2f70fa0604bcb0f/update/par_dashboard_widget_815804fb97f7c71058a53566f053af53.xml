@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard_widget">
+    <par_dashboard_widget action="INSERT_OR_UPDATE">
+        <canvas display_value="">a9f5483797f7c71058a53566f053affb</canvas>
+        <component display_value="List">7ff373544303121093711347efb8f23c</component>
+        <component_props>{"metrics":[{"dataSource":"dGFibGV4X3NucF9tYW5hZ2VyX3N1XzBfZm9sbG93X3VwX2FjdGlvbjE3OTE5OTEwMzcxMjE=","id":"ZEdGaWJHVjRYM051Y0Y5dFlXNWhaMlZ5WDNOMVh6QmZabTlzYkc5M1gzVndYMkZqZEdsdmJqRTNPVEU1T1RFd016Y3hNakU9MTc5MTk5MTAzODg0Nw==","aggregateFunction":"COUNT","numberFormat":{"customFormat":false},"axisId":"primary"}],"showHeader":true,"wrapTitle":false,"showLoadingIndicator":false,"showHeaderSeparator":false,"contextMenuActions":[],"headingLevel":2,"limit":10,"columnLimit":0,"maxCharLimit":40,"columnPreferenceKey":"","showPersonalization":false,"hideDotwalk":false,"showColumnReorder":true,"showColumnGrouping":true,"showColumnResizing":true,"showColumnFiltering":false,"showColumnSorting":true,"parFilter":"","allowAdditionalGroupByPerMetric":true,"groupBy":[],"sortBy":null,"sortByOrder":"desc","followFilters":true,"showFilterIcon":true,"enableRealTimeUpdate":null,"enableDrilldown":true,"enableCustomEmptyState":true,"componentId":"60xo4jbn","emptyStateIllustration":"","emptyStateHeading":"No Journey Tasks","emptyStateHeadingLevel":3,"emptyStateContent":"No Journey tasks are due today.","emptyStateAlignment":"vertical-centered","filterConfigurations":"@state.parFilters","columns":null,"table":"sn_jny_st_journey_task","groupByField":"","showLinks":true,"wrapCellContent":"useLineBreaksUserPref","showViewAll":true,"showInlineEditing":true,"allowListPagination":true,"lineClamp":1,"headerTitleAlignment":"start","headerTitle":"Journey Tasks-Due Today","showBorder":true,"showExportOption":true,"dataSources":[{"isDatabaseView":false,"allowRealTime":false,"label":"Journey Tasks","sourceType":"table","tableOrViewName":"sn_jny_st_journey_task","filterQuery":"assigned_toDYNAMIC90d1921e5f510100a9ad2572f2b477fe^due_dateONToday@javascript:gs.beginningOfToday()@javascript:gs.endOfToday()","preferredVisualizations":["d24d53f60350de7a652caf3188a46ed2"],"id":"dGFibGVzbl9qbnlfc3Rfam91cm5leV90YXNrMTc5MjA0MjkzMzEzNQ==","dataCategories":["trend","group","simple"]}],"bareBorder":false,"additionalGroupByConfig":[],"showAdditionalGroupBySelector":false,"parFilterConfig":[],"filterPerMetric":[],"refreshFrequency":null}</component_props>
+        <h>11</h>
+        <name/>
+        <required_translations>[{"comment":"","message":"No Journey Tasks","code":"PAR_DASHBOARD.a9f5483797f7c71058a53566f053affb.815804fb97f7c71058a53566f053af53"},{"comment":"","message":"No Journey tasks are due today.","code":"PAR_DASHBOARD.a9f5483797f7c71058a53566f053affb.815804fb97f7c71058a53566f053af53"},{"comment":"","message":"Journey Tasks-Due Today","code":"PAR_DASHBOARD.a9f5483797f7c71058a53566f053affb.815804fb97f7c71058a53566f053af53"},{"comment":"","message":"Journey Tasks","code":"PAR_DASHBOARD.a9f5483797f7c71058a53566f053affb.815804fb97f7c71058a53566f053af53"}]</required_translations>
+        <stored_component/>
+        <sys_class_name>par_dashboard_widget</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-14 15:21:21</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>815804fb97f7c71058a53566f053af53</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>par_dashboard_widget_815804fb97f7c71058a53566f053af53</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-15 05:48:51</sys_updated_on>
+        <visualization/>
+        <w>48</w>
+        <widget_props>{"filterPerMetric":[],"refreshFrequency":null,"headerTitle":"Journey Tasks-Due Today","enableRealTimeUpdate":null}</widget_props>
+        <x>0</x>
+        <y>12</y>
+    </par_dashboard_widget>
+</record_update>

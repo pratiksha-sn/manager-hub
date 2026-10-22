@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_agent_tool_m2m">
+    <sn_aia_agent_tool_m2m action="DELETE">
+        <active>true</active>
+        <agent display_value="Manager Team Brief">b3f089c99784171058a53566f053af5a</agent>
+        <description>Returns birthdays (day and month only), work anniversaries and joiners in the next N days for the manager's direct reports, plus missing HR dates.</description>
+        <display_mode>inline</display_mode>
+        <display_output>false</display_output>
+        <document_status/>
+        <entity>sn_aia_agent</entity>
+        <entity_id>b3f089c99784171058a53566f053af5a</entity_id>
+        <execution_mode>autopilot</execution_mode>
+        <inputs>[{"name":"days","value":"","description":"Number of days ahead to include (1-90). Default 30.","mandatory":false}]</inputs>
+        <max_auto_executions>3</max_auto_executions>
+        <name>get_team_milestones</name>
+        <output_transformation_strategy>none</output_transformation_strategy>
+        <post_message/>
+        <post_processing_script/>
+        <pre_message/>
+        <pre_run>false</pre_run>
+        <requires_text_refined_message>false</requires_text_refined_message>
+        <requires_widget_transformation>true</requires_widget_transformation>
+        <should_display_refined_message>false</should_display_refined_message>
+        <sys_class_name>sn_aia_agent_tool_m2m</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-18 16:41:41</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>f0118dc99784171058a53566f053af9a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>get_team_milestones</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_update_name>sn_aia_agent_tool_m2m_f0118dc99784171058a53566f053af9a</sys_update_name>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-18 16:41:41</sys_updated_on>
+        <timeout/>
+        <tool display_value="get_team_milestones">b4118dc99784171058a53566f053af94</tool>
+        <tool_attributes>{}</tool_attributes>
+        <transformation_instructions/>
+        <wait_for_widget_interaction>false</wait_for_widget_interaction>
+        <widgets/>
+    </sn_aia_agent_tool_m2m>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</application>
+        <file_path/>
+        <instance_id>c56f6cafebcb06d4cbbffceacad0cdc1</instance_id>
+        <instance_name>simplifynextpteltddemo2</instance_name>
+        <name>sn_aia_agent_tool_m2m_f0118dc99784171058a53566f053af9a</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_agent_tool_m2m"><sn_aia_agent_tool_m2m action="INSERT_OR_UPDATE"><active>true</active><agent display_value="Manager Team Brief">b3f089c99784171058a53566f053af5a</agent><description>Returns birthdays (day and month only), work anniversaries and joiners in the next N days for the manager's direct reports, plus missing HR dates.</description><display_mode>inline</display_mode><display_output>false</display_output><document_status/><entity>sn_aia_agent</entity><entity_id>b3f089c99784171058a53566f053af5a</entity_id><execution_mode>autopilot</execution_mode><inputs>[{"name":"days","value":"","description":"Number of days ahead to include (1-90). Default 30.","mandatory":false}]</inputs><max_auto_executions>3</max_auto_executions><name>get_team_milestones</name><output_transformation_strategy>none</output_transformation_strategy><post_message/><post_processing_script/><pre_message/><pre_run>false</pre_run><requires_text_refined_message>false</requires_text_refined_message><requires_widget_transformation>true</requires_widget_transformation><should_display_refined_message>false</should_display_refined_message><sys_class_name>sn_aia_agent_tool_m2m</sys_class_name><sys_created_by>pratiksha.bhandavale</sys_created_by><sys_created_on>2026-10-18 16:41:41</sys_created_on><sys_domain>global</sys_domain><sys_id>f0118dc99784171058a53566f053af9a</sys_id><sys_mod_count>0</sys_mod_count><sys_name>get_team_milestones</sys_name><sys_overrides/><sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package><sys_policy/><sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope><sys_update_name>sn_aia_agent_tool_m2m_f0118dc99784171058a53566f053af9a</sys_update_name><sys_updated_by>pratiksha.bhandavale</sys_updated_by><sys_updated_on>2026-10-18 16:41:41</sys_updated_on><timeout/><tool display_value="get_team_milestones">b4118dc99784171058a53566f053af94</tool><tool_attributes>{}</tool_attributes><transformation_instructions/><wait_for_widget_interaction>false</wait_for_widget_interaction><widgets/></sn_aia_agent_tool_m2m></record_update>]]></payload>
+        <payload_hash>1442409695</payload_hash>
+        <record_name>get_team_milestones</record_name>
+        <reverted_from/>
+        <source>cdced6e31b730750b2f70fa0604bcb01</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-18 16:41:41</sys_created_on>
+        <sys_id>f011cdc99784171058a53566f053af03</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a14fe3f2060000001</sys_recorded_at>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-18 16:41:41</sys_updated_on>
+        <type>Agent Tool</type>
+        <update_guid>7011cdc9c2841710ae6402d73cae9802</update_guid>
+        <update_guid_history>7011cdc9c2841710ae6402d73cae9802:1442409695</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="get_team_milestones">dd28850d1bc01710b2f70fa0604bcbff</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pratiksha.bhandavale</sys_created_by>
+        <sys_created_on>2026-10-18 17:12:34</sys_created_on>
+        <sys_db_object display_value="" name="sn_aia_agent_tool_m2m">sn_aia_agent_tool_m2m</sys_db_object>
+        <sys_id>1030f59602134292a041f03df8de7824</sys_id>
+        <sys_metadata>f0118dc99784171058a53566f053af9a</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>get_team_milestones</sys_name>
+        <sys_package display_value="Manager Support Hub" source="x_snp_manager_su_0">8e0e1a231b730750b2f70fa0604bcb0f</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Manager Support Hub">8e0e1a231b730750b2f70fa0604bcb0f</sys_scope>
+        <sys_scope_delete display_value="">25f8c3211216469491c7eb05de329da9</sys_scope_delete>
+        <sys_update_name>sn_aia_agent_tool_m2m_f0118dc99784171058a53566f053af9a</sys_update_name>
+        <sys_update_version display_value="sn_aia_agent_tool_m2m_f0118dc99784171058a53566f053af9a">f011cdc99784171058a53566f053af03</sys_update_version>
+        <sys_updated_by>pratiksha.bhandavale</sys_updated_by>
+        <sys_updated_on>2026-10-18 17:12:34</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
